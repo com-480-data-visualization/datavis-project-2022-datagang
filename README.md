@@ -19,11 +19,21 @@ _(max. 2000 characters per section)_
 
 ### Dataset
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
+<!-- > Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
 >
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
+> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip). -->
 
-### Problematic
+Two datasets regarding food balance are involved in our data visualization project: [**Food Balances (-2013)**](https://www.fao.org/faostat/en/#data/FBSH) and [**Food Balances (2010-)**](https://www.fao.org/faostat/en/#data/FBS), both released and maintained by [the Food and Agriculture Organization of the United Nations (FAO)](https://www.fao.org/home/en). Both datasets contain the quantity of food supplied and consumed for each country, each food type and each year. However, the two datasets have different timespans: **Food Balances (-2013)** covers a data timespan from 1960 to 2013, while **Food Balances (2010-)** contains data from 2010 to 2019. According to the [explanation from FAO](https://fenixservices.fao.org/faostat/static/documents/FBS/Key%20differences%20between%20new%20and%20old%20Food%20Balance%20Sheet_Dec2020.pdf), the data are split into two datasets because there was a change of methodology for collecting and presenting the data. During the exploratory data analysis section we will investigate whether it is possible to merge the two datasets.
+
+The data downloading webpage allows one to download a portion of dataset by selecting a subset of features. In our project, we simply download the whole dataset by using the "bulk download" option for further data analysis and visualization. Both datasets are rather clean and does not require much data cleaning. However we comment that there are missing data in the dataset, as depicted in the exploratory data analysis section below.
+
+The datasets used in our project are two csv files, and the download links to the specific files are given below:
+
+- [FoodBalanceSheetsHistoric_E_All_Data.csv](https://fenixservices.fao.org/faostat/static/bulkdownloads/FoodBalanceSheetsHistoric_E_All_Data.zip): csv file for dataset **Food Balances (-2013)**;
+- [FoodBalanceSheets_E_All_Data.csv](https://fenixservices.fao.org/faostat/static/bulkdownloads/FoodBalanceSheets_E_All_Data.zip): csv file for dataset **Food Balances (2010-)**.
+
+
+### Problematics
 
 Food is a major concern wordlwide and it is problem that is expected to get even worse year by year due to global warming and climate concerns. Nowadays, one-third of our greenhouse gas emissions comes from the agriculture sector. The world population is expected to grow by 2 billion in 2050, and feeding the world has become an increasingly concerning problem. Still, a big part of the grain harvested goes towards the meat industry, to feed livestocks. One of the main reasons is that over the past 50 years, our meat production has almost quadrupled - implying needs for more and more resources.
 
