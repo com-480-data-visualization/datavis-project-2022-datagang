@@ -43,14 +43,23 @@ To do so, we plan to visualize on a map the quantities of food each country expo
 
 ### Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
->
-> - Show some basic statistics and get insights about the data
+For some initial exploration of the data, we look at a broad overview of the proportions of food allocated for human consumption in comparison to food allocated for animal consumption. To get a general idea of the trends in different countries, we choose a rich country, a poor country, and also look at the global trend. This analysis uses the dataset from before 2013, but for the following milestones, we intend to include more recent data as well.
+In the following plot, we can see how the food vs feed proportions for all food products combined has changed over time. In addition, we can also see the differences between the United States and Mozambique. We observe that in Mozambique, the gap between food and feed is much greater. In the United States, especially in the earlier years, the split between food and feed is much closer to 50-50. It appears that this gap has grown over time. It will be interesting to see what changes have occurred in more recent years. In our project, we would like to offer visualizations that can convey these patterns, but on a global scale and with more detail.
+
+![Props Over Time](plots/propovertime.png)
+
+Another interesting factor that we can look at is the different types of food products, how they are distributed among countries, and how they are allocated within countries. For the sake of this initial exploration, we once again choose USA and Mozambique to get a stark comparison. These plots add some more insight to what we observed in the previous graph. Here, we observe the proportions of food and feed for the ten most common food items in the dataset. In Mozambique, there are many food categories that are not provided for animal consumption at all; whereas in the US, there is only one such category (Eggs). 
+
+![Mozambique](plots/mozambique.png)
+![USA](plots/usa.png)
+
+This initial exploration shows some of the patterns that we hope to visualize in an engaging and intuitive way.
+
 
 ### Related work
 
-We don't know of any data visualization projects using this dataset, but there are some research papers linked to it focusing on the sustainability aspect (https://edepot.wur.nl/532420).
-A kaggle entry also uses a subset of this dataset (https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production). There are quite a lot of data analysis made, but not much visualizations.
+An interactive visualization that we found using this dataset is an [animated bar chart](https://ourworldindata.org/grapher/cereal-allocation-by-country?time=2002&country=USA~GBR~CHN~IND~TCD~NGA~BRA~DEU~CAN~OWID_WRL) showing the countries that provide the highest proportion of food to humans. Additionally, there are some research papers linked to it focusing on the sustainability aspect (https://edepot.wur.nl/532420).
+A kaggle entry also uses a subset of this dataset (https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production). There are quite a lot of data analyses made, but not many visualizations.
 We don't plan to reuse any of these visualizations, but they can provide some overview of the dataset.
 Some examples of visualizations realised on this dataset are:
 
@@ -60,12 +69,9 @@ Some examples of visualizations realised on this dataset are:
 
 Even if our approach is not revolutionary in the data visualization world, our main goal is to make our visualization as interactive as possible to make the data accessible and fun to interact with. We want to really focus on the simplicity of use to convey our message in an effective way.
 
-[TODO Inspirations]
+One source of inspiration is [Feeding America](https://public.tableau.com/app/profile/feeding.america.research/viz/TheHealthcareCostsofFoodInsecurity/HealthcareCosts). They provide some nice map-based visualizations related to food insecurity. The visualizations are focused on the United States and the topic is slightly different, but we can definitely take inspiration from the format. 
 
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+The [World Poverty website] also provides some engaging visualizations, including one with a map interface. Our goal is to provide a similar style of visualization in a polished, engaging, and easy-to-use fashion.
 
 ## Milestone 2 (7th May, 5pm)
 
