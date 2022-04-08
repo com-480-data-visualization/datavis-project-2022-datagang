@@ -23,7 +23,7 @@ _(max. 2000 characters per section)_
 >
 > Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip). -->
 
-Two datasets regarding food balance are involved in our data visualization project: [**Food Balances (-2013)**](https://www.fao.org/faostat/en/#data/FBSH) and [**Food Balances (2010-)**](https://www.fao.org/faostat/en/#data/FBS), both released and maintained by [the Food and Agriculture Organization of the United Nations (FAO)](https://www.fao.org/home/en). Both datasets contain the quantity of food supplied and consumed for each country, each food type and each year. However, the two datasets have different timespans: **Food Balances (-2013)** covers a data timespan from 1960 to 2013, while **Food Balances (2010-)** contains data from 2010 to 2019. According to the [explanation from FAO](https://fenixservices.fao.org/faostat/static/documents/FBS/Key%20differences%20between%20new%20and%20old%20Food%20Balance%20Sheet_Dec2020.pdf), the data are split into two datasets because there was a change of methodology for collecting and presenting the data. During the exploratory data analysis section we will investigate whether it is possible to merge the two datasets.
+Two datasets regarding food balance are involved in our data visualization project: [**Food Balances (-2013)**](https://www.fao.org/faostat/en/#data/FBSH) and [**Food Balances (2010-)**](https://www.fao.org/faostat/en/#data/FBS), both released and maintained by [the Food and Agriculture Organization of the United Nations (FAO)](https://www.fao.org/home/en). Both datasets contain the quantity of food supplied and consumed for each country, each food type and each year. However, the two datasets have different timespans: **Food Balances (-2013)** covers a data timespan from 1960 to 2013, while **Food Balances (2010-)** contains data from 2010 to 2019. According to the [explanation from FAO](https://fenixservices.fao.org/faostat/static/documents/FBS/Key%20differences%20between%20new%20and%20old%20Food%20Balance%20Sheet_Dec2020.pdf), the data are split into two datasets because there was a change of methodology for collecting and presenting the data. It is possible to merge the two datasets.
 
 The data downloading webpage allows one to download a portion of dataset by selecting a subset of features. In our project, we simply download the whole dataset by using the "bulk download" option for further data analysis and visualization. Both datasets are rather clean and does not require much data cleaning. However we comment that there are missing data in the dataset, as depicted in the exploratory data analysis section below.
 
@@ -31,7 +31,6 @@ The datasets used in our project are two csv files, and the download links to th
 
 - [FoodBalanceSheetsHistoric_E_All_Data.csv](https://fenixservices.fao.org/faostat/static/bulkdownloads/FoodBalanceSheetsHistoric_E_All_Data.zip): csv file for dataset **Food Balances (-2013)**;
 - [FoodBalanceSheets_E_All_Data.csv](https://fenixservices.fao.org/faostat/static/bulkdownloads/FoodBalanceSheets_E_All_Data.zip): csv file for dataset **Food Balances (2010-)**.
-
 
 ### Problematics
 
@@ -48,7 +47,7 @@ In the following plot, we can see how the food vs feed proportions for all food 
 
 ![Props Over Time](plots/propovertime.png)
 
-Another interesting factor that we can look at is the different types of food products, how they are distributed among countries, and how they are allocated within countries. For the sake of this initial exploration, we once again choose USA and Mozambique to get a stark comparison. These plots add some more insight to what we observed in the previous graph. Here, we observe the proportions of food and feed for the ten most common food items in the dataset. In Mozambique, there are many food categories that are not provided for animal consumption at all; whereas in the US, there is only one such category (Eggs). 
+Another interesting factor that we can look at is the different types of food products, how they are distributed among countries, and how they are allocated within countries. For the sake of this initial exploration, we once again choose USA and Mozambique to get a stark comparison. These plots add some more insight to what we observed in the previous graph. Here, we observe the proportions of food and feed for the ten most common food items in the dataset. In Mozambique, there are many food categories that are not provided for animal consumption at all; whereas in the US, there is only one such category (Eggs).
 
 <p align="center">
   <img src="plots/mozambique.png" width="500" />
@@ -56,7 +55,6 @@ Another interesting factor that we can look at is the different types of food pr
 </p>
 
 This initial exploration shows some of the patterns that we hope to visualize in an engaging and intuitive way.
-
 
 ### Related work
 
@@ -71,7 +69,7 @@ Some examples of visualizations realised on this dataset are:
 
 Even if our approach is not revolutionary in the data visualization world, our main goal is to make our visualization as interactive as possible to make the data accessible and fun to interact with. We want to really focus on the simplicity of use to convey our message in an effective way.
 
-One source of inspiration is [Feeding America](https://public.tableau.com/app/profile/feeding.america.research/viz/TheHealthcareCostsofFoodInsecurity/HealthcareCosts). They provide some nice map-based visualizations related to food insecurity. The visualizations are focused on the United States and the topic is slightly different, but we can definitely take inspiration from the format. 
+One source of inspiration is [Feeding America](https://public.tableau.com/app/profile/feeding.america.research/viz/TheHealthcareCostsofFoodInsecurity/HealthcareCosts). They provide some nice map-based visualizations related to food insecurity. The visualizations are focused on the United States and the topic is slightly different, but we can definitely take inspiration from the format.
 
 The [World Poverty website](https://worldpoverty.io/map) also provides some engaging visualizations, including one with a map interface. Our goal is to provide a similar style of visualization in a polished, engaging, and easy-to-use fashion.
 
