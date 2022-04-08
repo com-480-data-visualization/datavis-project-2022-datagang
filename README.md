@@ -58,14 +58,14 @@ This initial exploration shows some of the patterns that we hope to visualize in
 
 ### Related work
 
-An interactive visualization that we found using this dataset is an [animated bar chart](https://ourworldindata.org/grapher/cereal-allocation-by-country?time=2002&country=USA~GBR~CHN~IND~TCD~NGA~BRA~DEU~CAN~OWID_WRL) showing the countries that provide the highest proportion of food to humans. Additionally, there are some research papers linked to it focusing on the sustainability aspect (https://edepot.wur.nl/532420).
-A kaggle entry also uses a subset of this dataset (https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production). There are quite a lot of data analyses made, but not many visualizations.
+An interactive visualization that we found using this dataset is an [animated bar chart](https://ourworldindata.org/grapher/cereal-allocation-by-country?time=2002&country=USA~GBR~CHN~IND~TCD~NGA~BRA~DEU~CAN~OWID_WRL) showing the countries that provide the highest proportion of food to humans. Additionally, there are some [research papers](https://edepot.wur.nl/532420) linked to it focusing on the sustainability aspect.
+A [kaggle entry](https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production) also uses a subset of this dataset. There are quite a lot of data analyses made, but not many visualizations.
 We don't plan to reuse any of these visualizations, but they can provide some overview of the dataset.
 Some examples of visualizations realised on this dataset are:
 
-- Production Visualization on a World Map - https://www.kaggle.com/code/kumarpranay/production-visualization-on-a-world-map
-- Who eats what we grow ? - https://www.kaggle.com/code/preetmehta/who-eat-what-we-grow
-- The visualization available on the data provider website - https://www.fao.org/faostat/en/#data/FBSH/visualize
+- [Production Visualization on a World Map](https://www.kaggle.com/code/kumarpranay/production-visualization-on-a-world-map)
+- [Who eats what we grow ?](https://www.kaggle.com/code/preetmehta/who-eat-what-we-grow)
+- [The visualization available on the data provider website](https://www.fao.org/faostat/en/#data/FBSH/visualize)
 
 Even if our approach is not revolutionary in the data visualization world, our main goal is to make our visualization as interactive as possible to make the data accessible and fun to interact with. We want to really focus on the simplicity of use to convey our message in an effective way.
 
