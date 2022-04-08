@@ -50,8 +50,10 @@ In the following plot, we can see how the food vs feed proportions for all food 
 
 Another interesting factor that we can look at is the different types of food products, how they are distributed among countries, and how they are allocated within countries. For the sake of this initial exploration, we once again choose USA and Mozambique to get a stark comparison. These plots add some more insight to what we observed in the previous graph. Here, we observe the proportions of food and feed for the ten most common food items in the dataset. In Mozambique, there are many food categories that are not provided for animal consumption at all; whereas in the US, there is only one such category (Eggs). 
 
-![Mozambique](plots/mozambique.png)
-![USA](plots/usa.png)
+<p float="left">
+  <img src="plots/mozambique.png" width="150" />
+  <img src="plots/usa.png" width="150" /> 
+</p>
 
 This initial exploration shows some of the patterns that we hope to visualize in an engaging and intuitive way.
 
@@ -71,7 +73,7 @@ Even if our approach is not revolutionary in the data visualization world, our m
 
 One source of inspiration is [Feeding America](https://public.tableau.com/app/profile/feeding.america.research/viz/TheHealthcareCostsofFoodInsecurity/HealthcareCosts). They provide some nice map-based visualizations related to food insecurity. The visualizations are focused on the United States and the topic is slightly different, but we can definitely take inspiration from the format. 
 
-The [World Poverty website] also provides some engaging visualizations, including one with a map interface. Our goal is to provide a similar style of visualization in a polished, engaging, and easy-to-use fashion.
+The [World Poverty website](https://worldpoverty.io/map) also provides some engaging visualizations, including one with a map interface. Our goal is to provide a similar style of visualization in a polished, engaging, and easy-to-use fashion.
 
 ## Milestone 2 (7th May, 5pm)
 
