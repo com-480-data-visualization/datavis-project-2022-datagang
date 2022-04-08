@@ -50,9 +50,9 @@ In the following plot, we can see how the food vs feed proportions for all food 
 
 Another interesting factor that we can look at is the different types of food products, how they are distributed among countries, and how they are allocated within countries. For the sake of this initial exploration, we once again choose USA and Mozambique to get a stark comparison. These plots add some more insight to what we observed in the previous graph. Here, we observe the proportions of food and feed for the ten most common food items in the dataset. In Mozambique, there are many food categories that are not provided for animal consumption at all; whereas in the US, there is only one such category (Eggs). 
 
-<p float="left">
-  <img src="plots/mozambique.png" width="150" />
-  <img src="plots/usa.png" width="150" /> 
+<p align="center">
+  <img src="plots/mozambique.png" width="500" />
+  <img src="plots/usa.png" width="500" /> 
 </p>
 
 This initial exploration shows some of the patterns that we hope to visualize in an engaging and intuitive way.
