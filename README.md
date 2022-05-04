@@ -79,7 +79,8 @@ The [World Poverty website](https://worldpoverty.io/map) also provides some enga
 
 ### Visualizations
 
-![Map Sketch](plots/mapsketch.png)
+<p align="center">
+  <img src="plots/mapsketch.png" />
 
 The core visualization for our project will be a world map. The idea is to color each country by a chosen preset. Depending on how far we progress, the variety of presets could differ, but the two main things that we would like to visualize are the food vs feed supply and the overall global food supply. So, for example, if the user were to select global food supply, the countries on the map would be colored according to their food supply per capita. This will allow for a clear comparison of food availability among all countries. The other primary issue we want to visualize is the allotment of food for human consumption versus for feeding livestock. For this visualization, we can color the countries according to the proportion of food they allocate for human consumption and then by the proportion of food they allocate for livestock.
 
@@ -89,7 +90,10 @@ In order to view the evolution of global trends over time, there will be a timel
 
 To the right of the main map, we will include two complementary visualizations. These visualizations will also adjust according to the same timeline used for the main map. In order to convey the information in a straightforward manner, we will just look at continental trends for the first one. The idea is to show what percentage of the population in a continent could be fed by that continent’s food supply. For example, we will take the population of a continent and the yearly food necessity for a person and calculate how much food is needed to sufficiently feed the population for a year. Then, we will compare that number with the food supply of a continent for a given year, using the aggregated data for that continent. We will visualize this difference by representing each continent by icons of people and coloring them according to the percentage of the population that could be fed with the yearly food supply.
 
-![People](plots/people.png)
+
+
+<p align="center">
+  <img src="plots/people.png" />
 
 
 We expect to see that richer continents have a surplus of food, while poorer continents may have a deficiency.
