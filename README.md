@@ -51,7 +51,7 @@ Another interesting factor that we can look at is the different types of food pr
 
 <p align="center">
   <img src="plots/mozambique.png" width="500" />
-  <img src="plots/usa.png" width="500" /> 
+  <img src="plots/usa.png" width="500" />
 </p>
 
 This initial exploration shows some of the patterns that we hope to visualize in an engaging and intuitive way.
@@ -76,6 +76,42 @@ The [World Poverty website](https://worldpoverty.io/map) also provides some enga
 ## Milestone 2 (7th May, 5pm)
 
 **10% of the final grade**
+
+### Visualizations
+
+![Map Sketch](plots/mapsketch.png)
+
+The core visualization for our project will be a world map. The idea is to color each country by a chosen preset. Depending on how far we progress, the variety of presets could differ, but the two main things that we would like to visualize are the food vs feed supply and the overall global food supply. So, for example, if the user were to select global food supply, the countries on the map would be colored according to their food supply per capita. This will allow for a clear comparison of food availability among all countries. The other primary issue we want to visualize is the allotment of food for human consumption versus for feeding livestock. For this visualization, we can color the countries according to the proportion of food they allocate for human consumption and then by the proportion of food they allocate for livestock.
+
+In order to view the evolution of global trends over time, there will be a timeline along the bottom of the map. In addition to looking at global trends, when a particular country is clicked on, a pop-up will appear with more precise information specific to that country.
+
+
+
+To the right of the main map, we will include two complementary visualizations. These visualizations will also adjust according to the same timeline used for the main map. In order to convey the information in a straightforward manner, we will just look at continental trends for the first one. The idea is to show what percentage of the population in a continent could be fed by that continent’s food supply. For example, we will take the population of a continent and the yearly food necessity for a person and calculate how much food is needed to sufficiently feed the population for a year. Then, we will compare that number with the food supply of a continent for a given year, using the aggregated data for that continent. We will visualize this difference by representing each continent by icons of people and coloring them according to the percentage of the population that could be fed with the yearly food supply.
+
+![People](plots/people.png)
+
+
+We expect to see that richer continents have a surplus of food, while poorer continents may have a deficiency.
+Below this, we will visualize the total global food supply over time using a line graph.
+
+
+  ![Food supply](src/assets/food_supply.png)
+
+
+### Tools
+* Pandas, numpy for data processing
+* HTML (Lecture 1)
+* CSS (Lecture 1)
+* JavaScript (Lectures 2 and 3)
+* D3.js (Lecture 4)
+* Interaction (Lecture 5)
+* Perception colors (Lecture 6)
+* Maps (Lecture 8)
+* Tabular Data (Lecture 11)
+
+For the overall website, we will need tools such as HTML and CSS. Interactive widgets can be implemented using JavaScript. As the main focus of the project is a dataset, D3.js will be an essential tool. For our core visualization, we are creating a map; therefore, the maps lecture will be an useful reference. The lectures addressing perception colors, interaction, and tabular data could also be of use.
+
 
 ## Milestone 3 (4th June, 5pm)
 
