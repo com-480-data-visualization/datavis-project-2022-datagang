@@ -77,7 +77,7 @@ The [World Poverty website](https://worldpoverty.io/map) also provides some enga
 
 **10% of the final grade**
 
-### Visualizations
+<!-- ### Visualizations
 
 <p align="center">
   <img src="plots/mapsketch.png" />
@@ -114,7 +114,9 @@ Below this, we will visualize the total global food supply over time using a lin
 * Maps (Lecture 8)
 * Tabular Data (Lecture 11)
 
-For the overall website, we will need tools such as HTML and CSS. Interactive widgets can be implemented using JavaScript. As the main focus of the project is a dataset, D3.js will be an essential tool. For our core visualization, we are creating a map; therefore, the maps lecture will be an useful reference. The lectures addressing perception colors, interaction, and tabular data could also be of use.
+For the overall website, we will need tools such as HTML and CSS. Interactive widgets can be implemented using JavaScript. As the main focus of the project is a dataset, D3.js will be an essential tool. For our core visualization, we are creating a map; therefore, the maps lecture will be an useful reference. The lectures addressing perception colors, interaction, and tabular data could also be of use. -->
+
+The document for milestone 2 can be found [here](doc/milestone_2.pdf). 
 
 A preview of the website can be found [here](https://htmlpreview.github.io/?https://github.com/com-480-data-visualization/datavis-project-2022-datagang/blob/master/src/index.html). The source code can be found under folder `./src`.
 
