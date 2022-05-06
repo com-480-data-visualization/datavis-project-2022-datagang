@@ -10,8 +10,13 @@
   </head>
 
   <body>
-    <h1>Global Food Balances - Food & Feed</h1>
+    <h1>Global Food Balances - Food vs Feed</h1>
     <h2>Data Gang Visualization Project COM-480</h2>
+    <br>
+
+    <div class="description">
+      <p>Our goal in this project will be to visualize the share of produced food that goes towards the breeding industry, and what is used to actually feed citizens. </p>
+    </div>
 
     <div class="first-screen">
       <div class="left-map">
@@ -20,9 +25,26 @@
         <div style="text-align: center;">Current year: 1987</div>
       </div>
       <div class="right-col">
-        <div class="description">
-          <p>Our goal in this project will be to visualize the share of produced food that goes towards the breeding industry, and what is used to actually feed citizens. </p>
-        </div>
+        <fieldset>
+          <legend>Type of Aliment</legend>
+      
+          <div>
+            <input type="radio" id="scales" name="scales" value="0"
+                   >
+            <label for="scales">Food: Aliment for feeding people</label>
+          </div>
+          <div>
+            <input type="radio" id="scales" name="scales" value="1"
+                   >
+            <label for="scales">Feed: Aliment for breeding industry</label>
+          </div>
+      
+          <div>
+            <input type="radio" id="scales" name="scales" value="2">
+            <label for="horns">Overall: Overall aliment supply</label>
+          </div>
+      </fieldset>
+
         <div className="right-col-section">
           <h2 class="section-title">Population fed by food supplies</h2>
           <div class="supply-stickmen">
@@ -78,7 +100,7 @@
         <div class="right-col-section total-supply">
           <h2 class="section-title">Total food supply in the world</h2>
           <img src="assets/food_supply.png" />
-        </div>"
+        </div>
 
       </div>
     </div>
