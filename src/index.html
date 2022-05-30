@@ -7,6 +7,9 @@
     <meta charset="utf-8" />
     <script src="index.js"></script>
     <script src="map.js"></script>
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/topojson.min.js"></script>
+
   </head>
 
   <body>
@@ -30,11 +33,34 @@
     </div>
 
     <div class="first-screen">
-      <div class="left-map">
+      
+      <svg id="map-plot" class="left-map" viewBox="0 0 1000 550" width="1000" height="550">
+        <style>
+          .canton {
+            stroke: rgb(25, 25, 25);
+            stroke-width: 1px;
+          }
+      
+          .canton-label {
+            fill: black;
+            text-anchor: middle;
+            font-size: 10pt;
+          }
+      
+          .point {
+            fill: rgb(255, 141, 82);
+            opacity: 0.05;
+          }
+        </style>
+      </svg>
+      
+
+      <!-- <div class="left-map">
         <img src="assets/map.png" />
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
         <div style="text-align: center;">Current year: 1987</div>
-      </div>
+      </div> -->
+
       <div class="right-col">
         <fieldset>
           <legend>Type of Aliment</legend>
