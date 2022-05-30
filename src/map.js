@@ -91,7 +91,7 @@ class MapPlot {
       .interpolate(d3.interpolateHcl);
 
     const population_promise = d3
-      .csv("data/cantons-population.csv")
+      .csv("http://161.35.216.145/assets/data/cantons-population.csv")
       .then((data) => {
         let cantonId_to_population = {};
         data.forEach((row) => {
@@ -100,23 +100,27 @@ class MapPlot {
         return cantonId_to_population;
       });
 
-    const map_promise = d3.json("data/ch-cantons.json").then((topojson_raw) => {
-      const canton_paths = topojson.feature(
-        topojson_raw,
-        topojson_raw.objects.cantons
-      );
-      return canton_paths.features;
-    });
+    const map_promise = d3
+      .json("http://161.35.216.145/assets/data/ch-cantons.json")
+      .then((topojson_raw) => {
+        const canton_paths = topojson.feature(
+          topojson_raw,
+          topojson_raw.objects.cantons
+        );
+        return canton_paths.features;
+      });
 
-    const point_promise = d3.csv("data/locations.csv").then((data) => {
-      let new_data = [];
+    const point_promise = d3
+      .csv("http://161.35.216.145/assets/data/locations.csv")
+      .then((data) => {
+        let new_data = [];
 
-      for (let idx = 0; idx < data.length; idx += 10) {
-        new_data.push(data[idx]);
-      }
+        for (let idx = 0; idx < data.length; idx += 10) {
+          new_data.push(data[idx]);
+        }
 
-      return new_data;
-    });
+        return new_data;
+      });
 
     Promise.all([population_promise, map_promise, point_promise]).then(
       (results) => {
