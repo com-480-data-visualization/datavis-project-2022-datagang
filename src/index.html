@@ -5,11 +5,20 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="index.css" />
     <meta charset="utf-8" />
-    <script src="index.js"></script>
-    <script src="map.js"></script>
     <script src="lib/d3.min.js"></script>
     <script src="lib/topojson.min.js"></script>
+    <script type="text/javascript" src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+    <!-- <script type="text/javascript" src ="https://leafletjs.com/examples/choropleth/us-states.js"></script> -->
+    <script src="data/world.js"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+
+    
   </head>
 
   <body>
@@ -34,25 +43,17 @@
 
     <div class="first-screen">
       
-      <svg id="map-plot" class="left-map" viewBox="0 0 1000 550" width="1000" height="550">
-        <style>
-          .canton {
-            stroke: rgb(25, 25, 25);
-            stroke-width: 1px;
-          }
+      <div class="map-container">
+        <div id="map"></div>
+
+        <div class="slidecontainer">
+          <input type="range" min="0" max="52" value="50" class="slider" id="current_year_slider">
+          <div id="current_year">Year: 1943</div>
+        </div>
+      </div>
+
       
-          .canton-label {
-            fill: black;
-            text-anchor: middle;
-            font-size: 10pt;
-          }
-      
-          .point {
-            fill: rgb(255, 141, 82);
-            opacity: 0.05;
-          }
-        </style>
-      </svg>
+
       
 
       <!-- <div class="left-map">
@@ -68,17 +69,17 @@
           <div>
             <input type="radio" id="scales" name="scales" value="0"
                    >
-            <label for="scales">Food: Aliment for feeding people</label>
+            <label for="scales">Food: aliment for feeding people</label>
           </div>
           <div>
             <input type="radio" id="scales" name="scales" value="1"
                    >
-            <label for="scales">Feed: Aliment for feeding livestock</label>
+            <label for="scales">Feed: aliment for feeding livestock</label>
           </div>
       
           <div>
-            <input type="radio" id="scales" name="scales" value="2">
-            <label for="horns">Overall: Overall aliment supply</label>
+            <input type="radio" id="scales" name="scales" value="2" checked>
+            <label for="horns">Overall: overall aliment supply</label>
           </div>
       </fieldset>
 
@@ -173,6 +174,10 @@
 
     <p style="text-align:center">👍 created by Lucas, Meghan, Tianzong @ <em>Datagang group</em>, EPFL</p>
 
+
+
+    <script src="map.js"></script>
+    <script src="index.js"></script>
 
   </body>
 </html>
