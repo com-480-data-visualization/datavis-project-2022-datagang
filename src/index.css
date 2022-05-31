@@ -63,7 +63,7 @@ body {
   padding-top: 2em;
 }
 
-.header-section { 
+.header-section {
   flex: 1; text-align: justify;
   border: 2px solid white;
   border-radius: 10px;
@@ -99,14 +99,14 @@ p, label, legend, div {
   width: 100%;
 }
 
-.right-col { 
+.right-col {
   flex: 2;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .supply-stickmen {
-  display: flex;  
+  display: flex;
   gap: 10px;
 }
 
@@ -137,7 +137,7 @@ p, label, legend, div {
   -webkit-appearance: none;
   width: 100%;
   height: 7px;
-  border-radius: 5px;  
+  border-radius: 5px;
   background: #FAFAFA;
   outline: none;
   /* opacity: 0.7; */
@@ -151,7 +151,7 @@ p, label, legend, div {
   appearance: none;
   width: 17px;
   height: 17px;
-  border-radius: 50%; 
+  border-radius: 50%;
   background: #BD0026;
   cursor: pointer;
 }
@@ -186,7 +186,7 @@ p, label, legend, div {
   justify-content: center;
   padding: 4em;
   text-align: center;
-  
+
 }
 
 .scs-second {
@@ -194,7 +194,7 @@ p, label, legend, div {
   flex-direction: row;
 }
 
-.scss-left { 
+.scss-left {
   flex: 2;
 }
 
@@ -206,4 +206,10 @@ p, label, legend, div {
 
 .scss-right > img {
   width: 50%;
+}
+
+
+ .piesection {
+  display: flex;
+  gap: 10px;
 }
