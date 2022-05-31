@@ -334,10 +334,8 @@ function main(data) {
         .on("mouseleave", mouseleave);
 
       var images = d3.selectAll("image");
-      images
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
+      images.on("mouseover", mouseover).on("mousemove", mousemove);
+      // .on("mouseleave", mouseleave);
 
       // mouseover, mousemouve, mouseleave functions
       function mouseover(d) {
@@ -351,8 +349,8 @@ function main(data) {
         var val = d.value / dictionary[search];
         tooltip
           .html(d.key + "\n" + formatNumber2(val))
-          .style("left", d3.mouse(this)[0] + "px")
-          .style("top", d3.mouse(this)[1] + "px");
+          .style("left", d3.mouse(this)[0] - margin.left + "px")
+          .style("top", d3.mouse(this)[1] - margin.top - height + "px");
       }
 
       function mouseleave(d) {

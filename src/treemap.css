@@ -82,11 +82,11 @@ image {
         color: #333;
         opacity: 0;
         font-size: 16px;
-        left: 10px;
+        /* left: 10px; */
         padding: 10px;
-        position: absolute;
+        position: relative;
         text-align: center;
-        top: 95px;
+        /* top: 95px; */
         width: 150px;
         z-index: 10;
       }
