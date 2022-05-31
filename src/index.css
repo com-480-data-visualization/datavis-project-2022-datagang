@@ -1,3 +1,26 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  } 
+}
+
+@keyframes opacityAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.project-description {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 :root {
   --map-tiles-filter: brightness(0.75) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
 }
@@ -94,6 +117,10 @@ h1, h2 {
 
 p, label, legend, div {
   color: white;
+}
+
+.opacity-anim {
+  animation: 2s ease-in 0s 1 opacityAppear;
 }
 
 .first-screen {

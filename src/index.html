@@ -45,7 +45,10 @@
 
     <br />
 
-    <div style="display: flex; gap: 8em; margin-top: 2em">
+    <div
+      style="display: flex; gap: 8em; margin-top: 2em"
+      class="project-description"
+    >
       <div class="header-section">
         <h3 style="margin-top: 0px">The data</h3>
         <div>
@@ -101,125 +104,126 @@
 
     <br />
 
-    <div class="description" style="margin-top: 10em">
-      <h2>
-        Question 1. How much food ended up feeding the people, and how much
-        ended up feeding the livestock?
-      </h2>
-    </div>
+    <div class="opacity-anim">
+      <div class="description" style="margin-top: 10em">
+        <h2>
+          Question 1. How much food ended up feeding the people, and how much
+          ended up feeding the livestock?
+        </h2>
+      </div>
+      <div class="first-screen">
+        <div class="map-container">
+          <div id="map"></div>
 
-    <div class="first-screen">
-      <div class="map-container">
-        <div id="map"></div>
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="0"
+              max="52"
+              value="52"
+              class="slider"
+              id="current_year_slider"
+            />
+            <div id="current_year">Year: 2013</div>
+          </div>
+        </div>
 
-        <div class="slidecontainer">
-          <input
-            type="range"
-            min="0"
-            max="52"
-            value="52"
-            class="slider"
-            id="current_year_slider"
-          />
-          <div id="current_year">Year: 2013</div>
+        <div class="right-col">
+          <fieldset>
+            <legend>Type of Aliment</legend>
+
+            <div>
+              <input type="radio" id="scales" name="scales" value="0" />
+              <label for="scales">Food: aliment for feeding people</label>
+            </div>
+            <div>
+              <input type="radio" id="scales" name="scales" value="1" />
+              <label for="scales">Feed: aliment for feeding livestock</label>
+            </div>
+
+            <div>
+              <input type="radio" id="scales" name="scales" value="2" checked />
+              <label for="horns">Overall: overall aliment supply</label>
+            </div>
+          </fieldset>
+
+          <div className="right-col-section">
+            <h2 class="section-title" style="margin-bottom: 0">Food vs Feed</h2>
+            <div class="piesection">
+              <div id="piechart"></div>
+              <div id="pielegend"></div>
+            </div>
+          </div>
+
+          <div className="right-col-section">
+            <h2 class="section-title">Population fed by feed supplies</h2>
+            <div class="supply-stickmen">
+              <div class="supply-stickman">
+                <span>78%</span>
+                <img src="assets/stickman.webp" style="opacity: 0.4" />
+                <span>Asia</span>
+              </div>
+              <div class="supply-stickman">
+                <span>137%</span>
+                <img src="assets/stickman.webp" style="opacity: 0.7" />
+                <span>Europe</span>
+              </div>
+              <div class="supply-stickman">
+                <span>59%</span>
+                <img src="assets/stickman.webp" style="opacity: 0.1" />
+                <span>Africa</span>
+              </div>
+              <div class="supply-stickman">
+                <span>175%</span>
+                <img src="assets/stickman.webp" />
+                <span>America</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-col-section total-supply">
+            <h2 class="section-title">Total food supply in the world</h2>
+            <img src="assets/food_supply.png" />
+          </div>
         </div>
       </div>
 
-      <div class="right-col">
-        <fieldset>
-          <legend>Type of Aliment</legend>
-
+      <div
+        style="
+          padding-left: 10%;
+          padding-right: 10%;
+          margin-top: 3em;
+          display: flex;
+          gap: 2em;
+        "
+      >
+        <div class="header-section">
+          <h3 style="margin-top: 0px">How to use?</h3>
           <div>
-            <input type="radio" id="scales" name="scales" value="0" />
-            <label for="scales">Food: aliment for feeding people</label>
+            Using this interactive map, you can visualize data for the entire
+            world. For every country, you can how well people are fed, how much
+            food goes towards feeding people and how much goes towards feeding
+            livestock. Using the slider at the bottom of the map, you can access
+            data for every year recorded. On the side you can see a few charts
+            containing global aggregates. <br /><br />Click on any country to
+            have more detailed information about it!
           </div>
+        </div>
+        <div class="header-section">
+          <h3 style="margin-top: 0px">What does it show?</h3>
           <div>
-            <input type="radio" id="scales" name="scales" value="1" />
-            <label for="scales">Feed: aliment for feeding livestock</label>
+            The most striking thing to do is to switch between the "Food" and
+            "Feed" modes. We purposefully kept the same color scale for both
+            modes. It shows quite evidently the insane amount of food that is
+            redirected towards livestock instead of actual people. For instance,
+            the United States uses 100 times more food to feed livestock than
+            humans!<br />
+            It is interesting to see that this trend mostly applies to richer
+            countries, the poorer ones tend to have less proportion gap. Our
+            charts on the right also show quite evidently that we have way more
+            food than needed in the world, the main problem is how it is
+            repartited.
           </div>
-
-          <div>
-            <input type="radio" id="scales" name="scales" value="2" checked />
-            <label for="horns">Overall: overall aliment supply</label>
-          </div>
-        </fieldset>
-
-        <div className="right-col-section">
-          <h2 class="section-title" style="margin-bottom: 0">Food vs Feed</h2>
-          <div class="piesection">
-            <div id="piechart"></div>
-            <div id="pielegend"></div>
-          </div>
-        </div>
-
-        <div className="right-col-section">
-          <h2 class="section-title">Population fed by feed supplies</h2>
-          <div class="supply-stickmen">
-            <div class="supply-stickman">
-              <span>78%</span>
-              <img src="assets/stickman.webp" style="opacity: 0.4" />
-              <span>Asia</span>
-            </div>
-            <div class="supply-stickman">
-              <span>137%</span>
-              <img src="assets/stickman.webp" style="opacity: 0.7" />
-              <span>Europe</span>
-            </div>
-            <div class="supply-stickman">
-              <span>59%</span>
-              <img src="assets/stickman.webp" style="opacity: 0.1" />
-              <span>Africa</span>
-            </div>
-            <div class="supply-stickman">
-              <span>175%</span>
-              <img src="assets/stickman.webp" />
-              <span>America</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="right-col-section total-supply">
-          <h2 class="section-title">Total food supply in the world</h2>
-          <img src="assets/food_supply.png" />
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="
-        padding-left: 10%;
-        padding-right: 10%;
-        margin-top: 3em;
-        display: flex;
-        gap: 2em;
-      "
-    >
-      <div class="header-section">
-        <h3 style="margin-top: 0px">How to use?</h3>
-        <div>
-          Using this interactive map, you can visualize data for the entire
-          world. For every country, you can how well people are fed, how much
-          food goes towards feeding people and how much goes towards feeding
-          livestock. Using the slider at the bottom of the map, you can access
-          data for every year recorded. On the side you can see a few charts
-          containing global aggregates. <br /><br />Click on any country to have
-          more detailed information about it!
-        </div>
-      </div>
-      <div class="header-section">
-        <h3 style="margin-top: 0px">What does it show?</h3>
-        <div>
-          The most striking thing to do is to switch between the "Food" and
-          "Feed" modes. We purposefully kept the same color scale for both
-          modes. It shows quite evidently the insane amount of food that is
-          redirected towards livestock instead of actual people. For instance,
-          the United States uses 100 times more food to feed livestock than
-          humans!<br />
-          It is interesting to see that this trend mostly applies to richer
-          countries, the poorer ones tend to have less proportion gap. Our
-          charts on the right also show quite evidently that we have way more
-          food than needed in the world, the main problem is how it is
-          repartited.
         </div>
       </div>
     </div>
