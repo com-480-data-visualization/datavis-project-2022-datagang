@@ -2,14 +2,18 @@
 #treemap {
   background: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
 }
 
 .title {
     font-weight: bold;
     font-size: 24px;
     text-align: center;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    padding-bottom: 6px;
+    color: white;
+    background-color: #1A2733;
 }
 text {
   pointer-events: none;

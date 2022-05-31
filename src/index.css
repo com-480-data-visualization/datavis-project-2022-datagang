@@ -1,9 +1,13 @@
 :root {
-  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  --map-tiles-filter: brightness(0.75) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
 }
 
 .map-tiles {
     filter: var(--map-tiles-filter, none);
+}
+
+* {
+  font-family: monospace;
 }
 
 .legend {
@@ -29,10 +33,15 @@
   background: rgba(255,255,255,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
+  color: black;}
+
+.info > div {
+  color: black;
 }
+
 .info h4 {
   margin: 0 0 5px;
-  color: #777;
+  color: #333;
 }
 
 .map-container {
@@ -41,17 +50,39 @@
 
 
 #map {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
+  border-radius: 12px;
 }
 
+
 body {
+  background-color: #1A2733;
   font-family: "Arial";
+  padding: 8em;
+  padding-top: 2em;
+}
+
+.header-section { 
+  flex: 1; text-align: justify;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.header-section > div {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 h1, h2 {
   text-align: center;
+  color: white;
   /* line-height: 30%; */
+}
+
+p, label, legend, div {
+  color: white;
 }
 
 .first-screen {
@@ -95,14 +126,21 @@ h1, h2 {
   width: 100%;
 }
 
+#current_year {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  margin-top: 10px;
+}
+
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
+  height: 7px;
   border-radius: 5px;  
-  background: #d3d3d3;
+  background: #FAFAFA;
   outline: none;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   -webkit-transition: .2s;
   transition: opacity .2s;
   margin-top: 10px;
@@ -111,10 +149,10 @@ h1, h2 {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%; 
-  background: #04AA6D;
+  background: #BD0026;
   cursor: pointer;
 }
 

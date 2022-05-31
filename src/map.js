@@ -44,7 +44,7 @@ const AVAILABLE_MODES = [
 // The display mode and the current year displayed can be changed dynamically
 const map_state = {
   mode: AVAILABLE_MODES[2],
-  year: 51,
+  year: 52,
 };
 
 // Update map display mode
@@ -60,7 +60,7 @@ let slider = document.getElementById("current_year_slider");
 slider.addEventListener("input", function () {
   map_state.year = this.value;
   document.getElementById("current_year").innerHTML =
-    1961 + parseInt(this.value);
+    "Year: " + (1961 + parseInt(this.value));
   reset_geojson();
 });
 
