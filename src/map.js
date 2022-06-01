@@ -21,14 +21,14 @@ const AVAILABLE_MODES = [
   {
     data_key: "prop_food",
     label: "Food: Aliment for feeding people",
-    grades: [300, 500, 15000, 50000],
-    unit: "thousand tons/capita",
+    grades: [800, 1200, 1400, 1800],
+    unit: "tons/capita",
   },
   {
     data_key: "prop_feed",
     label: "Feed: Aliment for feeding livestock",
-    grades: [300, 500, 15000, 50000],
-    unit: "thousand tons/capita",
+    grades: [200, 400, 800, 1000],
+    unit: "tons/capita",
   },
   {
     data_key: "food_supply",
@@ -44,7 +44,7 @@ const AVAILABLE_MODES = [
 // The display mode and the current year displayed can be changed dynamically
 const map_state = {
   mode: AVAILABLE_MODES[2],
-  year: 52,
+  year: 57,
 };
 
 // Update map display mode
