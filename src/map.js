@@ -44,7 +44,7 @@ const AVAILABLE_MODES = [
 // The display mode and the current year displayed can be changed dynamically
 const map_state = {
   mode: AVAILABLE_MODES[2],
-  year: 57,
+  year: 58,
 };
 
 // Update map display mode

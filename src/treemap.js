@@ -14,7 +14,7 @@ var defaults = {
 };
 
 function main(data) {
-  var dictionary = data.dict; // dictionary of food/feed amounts for each box
+  var dictionary = data.dict; // dictionary of food/feed amounts for each bo
 
   var formatNumber = d3.format(defaults.format),
     rname = defaults.rootname,
@@ -26,6 +26,29 @@ function main(data) {
     transitioning;
 
   var color = d3.scale.category20();
+
+  // var colors = ["#fff9f6","#ffefe8","#ffdfd1","#ffc1a7","#ff9466","#eb6126","#b93a04","#792603","#351a0f","#FFFCEC","#FFF6D0","#FFEBA1","#FFDD73","#FFCF50","#FFB916","#DB9710","#B7790B","#935C07","#7A4804"]
+  // var colors = ["#52281a", "#4a1a11", "#e18314", "#8c3b00", "#892600", "#532d0b", "#c34c00", "#fc6900", "#3a250c", "#903400", "#d23300", "#ec9a1f", "#322025", "#772200", "#ea8e1c"];
+  // var colors = [
+  //   "#003f5c",
+  //   "#2f4b7c",
+  //   "#665191",
+  //   "#a05195",
+  //   "#d45087",
+  //   "#f95d6a",
+  //   "#ff7c43",
+  //   "#ffa600",
+  // ];
+  var colors = [
+    "#003f5c",
+    "#2f4b7c",
+    "#665191",
+    "#a05195",
+    "#d45087",
+    "#f95d6a",
+    "#ff7c43",
+    "#ffa600",
+  ];
 
   var x = d3.scale.linear().domain([0, width]).range([0, width]);
 
@@ -188,13 +211,13 @@ function main(data) {
     // add food images
     if (d.key == "Food" || d.key == "Feed") {
       g.filter(function (d) {
-        return d.key == "Milk - Excluding Butter";
+        return d.key == "Milk";
       })
         .append("image")
         .attr("xlink:href", "data/milkb.png")
         .call(addImage);
       g.filter(function (d) {
-        return d.key == "Cereals - Excluding Beer";
+        return d.key == "Cereals";
       })
         .append("image")
         .attr("xlink:href", "data/cerealsborder.png")
@@ -212,7 +235,7 @@ function main(data) {
         .attr("xlink:href", "data/vegetables.png")
         .call(addImage);
       g.filter(function (d) {
-        return d.key == "Fruits - Excluding Wine";
+        return d.key == "Fruits";
       })
         .append("image")
         .attr("xlink:href", "data/fruitb.png")
@@ -240,6 +263,48 @@ function main(data) {
       })
         .append("image")
         .attr("xlink:href", "data/maize.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Starchy Roots";
+      })
+        .append("image")
+        .attr("xlink:href", "data/starchyroots.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Alcoholic Beverages";
+      })
+        .append("image")
+        .attr("xlink:href", "data/alcohol.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Beer";
+      })
+        .append("image")
+        .attr("xlink:href", "data/beer.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Wheat";
+      })
+        .append("image")
+        .attr("xlink:href", "data/wheat.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Potatoes";
+      })
+        .append("image")
+        .attr("xlink:href", "data/potatoes.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Sugar & Sweeteners";
+      })
+        .append("image")
+        .attr("xlink:href", "data/sugar.png")
+        .call(addImage);
+      g.filter(function (d) {
+        return d.key == "Cassava";
+      })
+        .append("image")
+        .attr("xlink:href", "data/cassava.png")
         .call(addImage);
     }
 
@@ -296,10 +361,11 @@ function main(data) {
     names.call(text);
 
     g.selectAll("rect").style("fill", function (d) {
-      return color(d.key);
+      var rand = Math.floor(Math.random() * 9);
+      return colors[rand];
+      //return color(d.key);
     }); // adds color to rectangles
 
-    //g.selectAll("rect").filter(function(d) { return d.key == "Milk - Excluding Butter"}).style("fill", "pink");
     g.selectAll("rect")
       .filter(function (d) {
         return d.key == "Food";
@@ -314,6 +380,7 @@ function main(data) {
     // add tooltip for food
 
     if ((d.key == "Food") | (d.key == "Feed")) {
+      console.log(d.key);
       var cat = d.key;
 
       var tooltip = d3
@@ -334,14 +401,18 @@ function main(data) {
         .on("mouseleave", mouseleave);
 
       var images = d3.selectAll("image");
-      images.on("mouseover", mouseover).on("mousemove", mousemove);
-      // .on("mouseleave", mouseleave);
+      images
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave);
 
       // mouseover, mousemouve, mouseleave functions
       function mouseover(d) {
         tooltip.style("opacity", 1);
         d3.select(this).style("stroke", "black").style("opacity", 1);
       }
+      console.log(height);
+      console.log(margin.top);
 
       function mousemove(d) {
         var formatNumber2 = d3.format(".2%");
@@ -350,12 +421,47 @@ function main(data) {
         tooltip
           .html(d.key + "\n" + formatNumber2(val))
           .style("left", d3.mouse(this)[0] - margin.left + "px")
-          .style("top", d3.mouse(this)[1] - margin.top - height + "px");
+          .style("top", d3.mouse(this)[1] - height - margin.top + "px");
       }
 
       function mouseleave(d) {
         tooltip.style("opacity", 0);
         d3.select(this).style("stroke", "none").style("opacity", 1);
+      }
+    }
+
+    // add country to top bar on mouseover
+    if (
+      (d.key == "Europe") |
+      (d.key == "North America") |
+      (d.key == "South America") |
+      (d.key == "Africa") |
+      (d.key == "Asia") |
+      (d.key == "Oceania")
+    ) {
+      var cat = d.key;
+
+      var tooltip2 = d3
+        .select("#tooltip")
+        .append("div")
+        .attr("class", "tooltip2");
+
+      var boxes2 = d3.selectAll("rect");
+
+      boxes2.on("mouseover", mouseover).on("mouseleave", mouseleave);
+
+      function mouseover(d) {
+        console.log(d);
+        topbar
+          .append("text")
+          .text(d.parent.key)
+          .attr("id", "countryname")
+          .attr("x", 250)
+          .attr("y", 20 - margin.top);
+      }
+
+      function mouseleave(d) {
+        d3.select("#countryname").remove();
       }
     }
 
@@ -428,7 +534,7 @@ function main(data) {
           (d.key == "Oceania")
         );
       })
-      .style("font-size", "22px");
+      .style("font-size", "20px");
     text
       .filter(function (d) {
         return d.key == "Oceania";

@@ -135,8 +135,8 @@
             <input
               type="range"
               min="0"
-              max="57"
-              value="57"
+              max="58"
+              value="58"
               class="slider"
               id="current_year_slider"
             />
@@ -164,7 +164,7 @@
           </fieldset>
 
           <div className="right-col-section">
-            <h2 class="section-title" style="margin-bottom: 0">Food vs Feed</h2>
+            <legend class="section-title mt-4" style="margin-bottom: 0">Food vs Feed</legend>
             <div class="piesection">
               <div id="piechart"></div>
               <div id="pielegend"></div>
@@ -172,35 +172,27 @@
           </div>
 
           <div className="right-col-section">
-            <h2 class="section-title">Population fed by feed supplies</h2>
-            <div class="supply-stickmen">
-              <div class="supply-stickman">
-                <span>78%</span>
-                <img src="assets/stickman.webp" style="opacity: 0.4" />
-                <span>Asia</span>
-              </div>
-              <div class="supply-stickman">
-                <span>137%</span>
-                <img src="assets/stickman.webp" style="opacity: 0.7" />
-                <span>Europe</span>
-              </div>
-              <div class="supply-stickman">
-                <span>59%</span>
-                <img src="assets/stickman.webp" style="opacity: 0.1" />
-                <span>Africa</span>
-              </div>
-              <div class="supply-stickman">
-                <span>175%</span>
-                <img src="assets/stickman.webp" />
-                <span>America</span>
-              </div>
-            </div>
-          </div>
+          <legend class="mt-4">Population fed by feed supplies</legend>
+          <!-- <div class="supply-stickmen"> -->
+          <span>North America</span>
+            <div class="supply-stickman" id="northam"></div>
+            <span>South America</span>
+            <div class="supply-stickman" id="southam"></div>
+            <span>Europe</span>
+            <div class="supply-stickman" id="eur"></div>
+            <span>Africa</span>
+            <div class="supply-stickman" id="afr"></div>
+            <span>Asia</span>
+            <div class="supply-stickman" id="asia"></div>
+            <span>Oceania</span>
+            <div class="supply-stickman" id="oce"></div>
+          <!-- </div> -->
+        </div>
 
-          <div class="right-col-section total-supply">
+          <!-- <div class="right-col-section total-supply">
             <h2 class="section-title">Total food supply in the world</h2>
             <img src="assets/food_supply.png" />
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -229,16 +221,14 @@
           <h3 style="margin-top: 0px">What does it show?</h3>
           <div>
             The most striking thing to do is to switch between the "Food" and
-            "Feed" modes. We purposefully kept the same color scale for both
-            modes. It shows quite evidently the insane amount of food that is
-            redirected towards livestock instead of actual people. For instance,
-            the United States uses 100 times more food to feed livestock than
-            humans!<br />
+            "Feed" modes and see that a lot of countries nearly use half as much aliments to feed livestock than humans. 
+            In the USA alone, 1000 tons of food are used for that purpose only every year!<br />
             It is interesting to see that this trend mostly applies to richer
             countries, the poorer ones tend to have less proportion gap. Our
             charts on the right also show quite evidently that we have way more
             food than needed in the world, the main problem is how it is
-            repartited.
+            repartited. Around a quarter of the production goes towards feeding livestock, and with this supply alone 
+            we could feed most of the population.
           </div>
         </div>
       </div>
@@ -254,14 +244,9 @@
         Question 2. What are the different types of food for people and for
         livestock?
       </h2>
-      <p>
-        These charts display the proportions of every type of food used for food
-        (feeding humans) and deef (feeding cattle). We can (hopefully!) see
-        disparities in the most represented types of food.
-      </p>
     </div>
 
-    <div class="second-screen">
+    <!-- <div class="second-screen">
       <div class="scs-first">
         <div class="scsf-left">
           <h2>Food quantities per type of aliment</h2>
@@ -271,16 +256,26 @@
           <h2>Feed quantities per type of aliment</h2>
           <img src="assets/treemap.png" />
         </div>
-      </div>
+      </div> -->
       <!-- <div class="scs-second">
         <div class="scss-left"></div>
-
       </div> -->
 
       <div style="margin: 0 auto">
         <div id="treemap"></div>
         <div id="tooltip"></div>
       </div>
+
+      <div class="header-section" style="margin-top: 6em; margin-left: 25%; margin-right: 25%;">
+        <h3 style="margin-top: 0px">What does it show?</h3>
+        <div>
+          This chart shows how much each continent and each countries weights in the global food consumption.
+          By clicking on a country, you can see all the types of food that are consumed. It is useful to distinguish
+          eating habits by continent and by country. It is evident that these change heavily depending on the growth 
+          of the country. 
+        </div>
+      </div>
+
     </div>
 
     <br />

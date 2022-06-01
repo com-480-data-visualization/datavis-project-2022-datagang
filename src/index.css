@@ -4,7 +4,7 @@
   }
   100% {
     transform: translateX(0);
-  } 
+  }
 }
 
 @keyframes opacityAppear {
@@ -155,7 +155,7 @@ p, label, legend, div {
 .supply-stickman {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   gap: 10px;
 }
@@ -249,10 +249,9 @@ p, label, legend, div {
 
  .piesection {
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
-
-
 
 .modal-content {
   width: fit-content;
@@ -322,4 +321,24 @@ p, label, legend, div {
 
 .pastille_food {
   background-color: red;
+}
+.chart rect:first-of-type {
+  color: #fff;
+  fill: white;
+}
+
+.chart rect:nth-of-type(2) {
+  color: #fff;
+  stroke: transparent;
+  fill: red;
+}
+
+legend {
+  font-weight: bold;
+}
+
+ol {
+  margin-left: 20px;
+  margin-top: 3px;
+  margin-bottom: 20px;
 }
