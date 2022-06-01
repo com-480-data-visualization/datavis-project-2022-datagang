@@ -43,7 +43,7 @@ rect.parent {
 }
 
 .topbar:hover rect {
-  fill: indigo;
+  fill: orange;
 }
 
 .children rect.parent,
@@ -87,6 +87,6 @@ image {
         position: relative;
         text-align: center;
         /* top: 95px; */
-        width: 150px;
+        width: 220px;
         z-index: 10;
       }

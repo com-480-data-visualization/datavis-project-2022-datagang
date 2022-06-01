@@ -4,7 +4,7 @@
   }
   100% {
     transform: translateX(0);
-  } 
+  }
 }
 
 @keyframes opacityAppear {
@@ -250,4 +250,16 @@ p, label, legend, div {
  .piesection {
   display: flex;
   gap: 10px;
+}
+
+
+.chart rect:first-of-type {
+  color: #fff;
+  fill: white;
+}
+
+.chart rect:nth-of-type(2) {
+  color: #fff;
+  stroke: transparent;
+  fill: red;
 }
