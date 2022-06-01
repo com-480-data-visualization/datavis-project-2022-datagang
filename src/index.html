@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>Data Gang Project 2022</title>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js">
+      d3v3 = d3;
+    </script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="treemap.css" />
     <meta charset="utf-8" />
     <!-- <script src="lib/d3.min.js"></script> -->
     <script src="lib/topojson.min.js"></script>
@@ -27,6 +28,21 @@
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""
     ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="treemap.css" />
   </head>
 
   <body>
@@ -273,9 +289,65 @@
       👍 created by Lucas, Meghan, Tianzong @ <em>Datagang group</em>, EPFL
     </p>
 
+    <div
+      class="modal"
+      id="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              onclick="$('#modal').modal('hide')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p style="text-align: center; font-weight: bold; margin-top: 1em">
+              Proportion of products used for food or feed for the 10 most
+              common types of aliments (in %)
+            </p>
+            <div id="my_dataviz"></div>
+
+            <div id="types_of_food_legend">
+              <div class="legend_row">
+                <div class="pastille pastille_food"></div>
+                <div>Food</div>
+              </div>
+              <div class="legend_row">
+                <div class="pastille pastille_feed"></div>
+                <div>Feed</div>
+              </div>
+            </div>
+
+            <div class="header-section" style="margin-top: 2em">
+              <h3 style="margin-top: 0px; font-size: 1.3rem">
+                What does it show?
+              </h3>
+              <div>
+                It is striking to see that some underfed countries like
+                Afghanistan have nearly no food used for feeding livestock while
+                richer countries like the USA have a huge proportion of aliments
+                like cereals and maize used for cattle.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="map.js"></script>
     <script src="map_side.js"></script>
     <script src="index.js"></script>
     <script src="treemap.js"></script>
+    <script src="country_focus.js"></script>
   </body>
 </html>

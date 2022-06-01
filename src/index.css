@@ -251,3 +251,75 @@ p, label, legend, div {
   display: flex;
   gap: 10px;
 }
+
+
+
+.modal-content {
+  width: fit-content;
+  background-color: black;;
+}
+
+.modal-body {
+  padding: 2em;
+
+}
+
+.close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.axisWhite line {
+  stroke: white;
+}
+
+.axisWhite path {
+  stroke: white;
+}
+
+.axisWhite text {fill: white;}
+
+.rotated_label {
+  transform: translateY(38px) rotate(-65deg) ;
+  
+  /* transform: translateY(100) */
+}
+
+
+#types_of_food_legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+  margin-top: -2.75em;
+}
+
+#types_of_food_legend .pastille {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* background-color: red; */
+}
+
+#types_of_food_legend .legend_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pastille_feed {
+  background-color: orange;
+}
+
+.pastille_food {
+  background-color: red;
+}

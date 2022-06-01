@@ -100,6 +100,17 @@ const style = (feature) => {
   };
 };
 
+function updateFocusedModal(feature) {
+  $("#modal").modal("show");
+
+  const { properties } = feature;
+  $("#modal-title").html(
+    properties.NAME_LONG + " - " + (1961 + parseInt(map_state.year))
+  );
+
+  typesOfFoodBarPlot(properties.types_of_food, map_state.year);
+}
+
 /**
  * Map Setup
  */
@@ -129,9 +140,10 @@ function resetHighlight(e) {
 
 // On country click, zoom to it
 function zoomToFeature(e) {
-  map.fitBounds(e.target.getBounds());
+  updateFocusedModal(e.target.feature);
 }
 
+let t = false;
 // Setup the event listeners for each feature
 function onEachFeature(feature, layer) {
   layer.on({
@@ -146,6 +158,7 @@ function reset_geojson() {
   if (geojson) map.removeLayer(geojson);
 
   geojson = L.geoJson(worldData, { style, onEachFeature }).addTo(map);
+  console.log(geojson);
 
   if (info) info.update();
   if (legend) legend.addTo(map);
@@ -173,7 +186,6 @@ info.onAdd = function (map) {
 };
 
 info.update = function (props) {
-  console.log(props);
   let value =
     props && props[map_state.mode.data_key]
       ? Math.round(props[map_state.mode.data_key][map_state.year])
