@@ -1,3 +1,4 @@
+
 window.addEventListener("message", function (e) {
   var data = e.data.data;
   return main(data);
@@ -10,7 +11,7 @@ var defaults = {
   title: "",
   width: 1000,
   height: 500,
-  title: "Aliments by Country and Food/Feed",
+  title: "Aliments by Country and Food vs. Feed Proportions in 2019",
 };
 
 function main(data) {
@@ -27,28 +28,10 @@ function main(data) {
 
   var color = d3.scale.category20();
 
-  // var colors = ["#fff9f6","#ffefe8","#ffdfd1","#ffc1a7","#ff9466","#eb6126","#b93a04","#792603","#351a0f","#FFFCEC","#FFF6D0","#FFEBA1","#FFDD73","#FFCF50","#FFB916","#DB9710","#B7790B","#935C07","#7A4804"]
-  // var colors = ["#52281a", "#4a1a11", "#e18314", "#8c3b00", "#892600", "#532d0b", "#c34c00", "#fc6900", "#3a250c", "#903400", "#d23300", "#ec9a1f", "#322025", "#772200", "#ea8e1c"];
-  // var colors = [
-  //   "#003f5c",
-  //   "#2f4b7c",
-  //   "#665191",
-  //   "#a05195",
-  //   "#d45087",
-  //   "#f95d6a",
-  //   "#ff7c43",
-  //   "#ffa600",
-  // ];
-  var colors = [
-    "#003f5c",
-    "#2f4b7c",
-    "#665191",
-    "#a05195",
-    "#d45087",
-    "#f95d6a",
-    "#ff7c43",
-    "#ffa600",
-  ];
+  // var colors = ["#003f5c", "#2f4b7c", "#665191", "#a05195", "#d45087", "#f95d6a", "#ff7c43", "#ffa600"];
+  var colors = ["#4c6085", "#4380b9", "#39a0ed", "#38c9dd", "#36f1cd", "#25dbb8", "#13c4a3"];
+  //var colors = ["#504746", "#846f66", "#bca294", "#bfada3", "#ddb2b2", "#fbb7c0", "#ea93a4", "#d96e88", "#c8496c", "#b6244f"];
+
 
   var x = d3.scale.linear().domain([0, width]).range([0, width]);
 
@@ -103,7 +86,6 @@ function main(data) {
   display(data);
 
   function accumulate(d) {
-    // d: {key: 'World', data: array}
     return (d._children = d.values)
       ? (d.value = d.values.reduce(function (p, v) {
           return p + accumulate(v);
@@ -265,47 +247,48 @@ function main(data) {
         .attr("xlink:href", "data/maize.png")
         .call(addImage);
       g.filter(function (d) {
-        return d.key == "Starchy Roots";
-      })
-        .append("image")
-        .attr("xlink:href", "data/starchyroots.png")
-        .call(addImage);
+          return d.key == "Starchy Roots";
+        })
+          .append("image")
+          .attr("xlink:href", "data/starchyroots.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Alcoholic Beverages";
-      })
-        .append("image")
-        .attr("xlink:href", "data/alcohol.png")
-        .call(addImage);
+          return d.key == "Alcoholic Beverages";
+        })
+          .append("image")
+          .attr("xlink:href", "data/alcohol.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Beer";
-      })
-        .append("image")
-        .attr("xlink:href", "data/beer.png")
-        .call(addImage);
+          return d.key == "Beer";
+        })
+          .append("image")
+          .attr("xlink:href", "data/beer.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Wheat";
-      })
-        .append("image")
-        .attr("xlink:href", "data/wheat.png")
-        .call(addImage);
+          return d.key == "Wheat";
+        })
+          .append("image")
+          .attr("xlink:href", "data/wheat.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Potatoes";
-      })
-        .append("image")
-        .attr("xlink:href", "data/potatoes.png")
-        .call(addImage);
+          return d.key == "Potatoes";
+        })
+          .append("image")
+          .attr("xlink:href", "data/potatoes.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Sugar & Sweeteners";
-      })
-        .append("image")
-        .attr("xlink:href", "data/sugar.png")
-        .call(addImage);
+          return d.key == "Sugar & Sweeteners";
+        })
+          .append("image")
+          .attr("xlink:href", "data/sugar.png")
+          .call(addImage);
       g.filter(function (d) {
-        return d.key == "Cassava";
-      })
-        .append("image")
-        .attr("xlink:href", "data/cassava.png")
-        .call(addImage);
+          return d.key == "Cassava";
+        })
+          .append("image")
+          .attr("xlink:href", "data/cassava.png")
+          .call(addImage);
+
     }
 
     // add food and feed images
@@ -361,7 +344,7 @@ function main(data) {
     names.call(text);
 
     g.selectAll("rect").style("fill", function (d) {
-      var rand = Math.floor(Math.random() * 9);
+      var rand = Math.floor(Math.random()*7);
       return colors[rand];
       //return color(d.key);
     }); // adds color to rectangles
@@ -370,100 +353,184 @@ function main(data) {
       .filter(function (d) {
         return d.key == "Food";
       })
-      .style("fill", "blue");
+      .style("fill", "#6564DB");
     g.selectAll("rect")
       .filter(function (d) {
         return d.key == "Feed";
       })
-      .style("fill", "purple");
+      .style("fill", "#232ED1");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "Africa";
+    })
+    .style("fill", "#7FDEFF");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "Asia";
+    })
+    .style("fill", "#907AD6");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "North America";
+    })
+    .style("fill", "#DABFFF");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "South America";
+    })
+    .style("fill", "#6BB1D2");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "Europe";
+    })
+    .style("fill", "#38c9dd");
+    g.selectAll("rect")
+    .filter(function (d) {
+      return d.key == "Oceania";
+    })
+    .style("fill", "#38c9dd");
+
+
+
+
+
+
+
 
     // add tooltip for food
 
-    if ((d.key == "Food") | (d.key == "Feed")) {
-      console.log(d.key);
-      var cat = d.key;
 
-      var tooltip = d3
-        .select("#tooltip")
-        .append("div")
-        .attr("class", "tooltip");
+if ((d.key == "Food") | (d.key == "Feed")) {
+    var cat2 = d.key;
 
-      var boxes = d3.selectAll("rect");
-      var finalboxes = boxes.filter(function (d) {
-        if (d != undefined) {
-          return d.element == cat;
-        }
-      });
-
-      finalboxes
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
-
-      var images = d3.selectAll("image");
-      images
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
-
-      // mouseover, mousemouve, mouseleave functions
-      function mouseover(d) {
-        tooltip.style("opacity", 1);
-        d3.select(this).style("stroke", "black").style("opacity", 1);
+    var boxes2 = d3.selectAll("rect");
+    var finalboxes2 = boxes2.filter(function (d) {
+      if (d != undefined) {
+        return d.element == cat2;
       }
-      console.log(height);
-      console.log(margin.top);
+    });
 
-      function mousemove(d) {
+    finalboxes2
+      .on("mouseover", mouseover2)
+      .on("mouseleave", mouseleave2);
+
+      var images2 = d3.selectAll("image");
+      images2.on("mouseover", mouseover2)
+      //.on("mousemove", mousemove)
+      .on("mouseleave", mouseleave2);
+
+
+    function mouseover2(d) {
         var formatNumber2 = d3.format(".2%");
         var search = d.region.concat(d.subregion, d.element);
         var val = d.value / dictionary[search];
-        tooltip
-          .html(d.key + "\n" + formatNumber2(val))
-          .style("left", d3.mouse(this)[0] - margin.left + "px")
-          .style("top", d3.mouse(this)[1] - height - margin.top + "px");
-      }
-
-      function mouseleave(d) {
-        tooltip.style("opacity", 0);
-        d3.select(this).style("stroke", "none").style("opacity", 1);
-      }
+      if (d != undefined) {
+        topbar.append("text")
+        .text(d.key + " " + formatNumber2(val))
+        .attr("id", "alimentpercent")
+        .attr("x", 700)
+        .attr("y", 20 - margin.top);
+    }
     }
 
-    // add country to top bar on mouseover
-    if (
-      (d.key == "Europe") |
-      (d.key == "North America") |
-      (d.key == "South America") |
-      (d.key == "Africa") |
-      (d.key == "Asia") |
-      (d.key == "Oceania")
-    ) {
-      var cat = d.key;
+    function mouseleave2(d) {
+      d3.select("#alimentpercent").remove()
+    }
+  }
 
-      var tooltip2 = d3
-        .select("#tooltip")
-        .append("div")
-        .attr("class", "tooltip2");
+
+
+
+
+    // if ((d.key == "Food") | (d.key == "Feed")) {
+    //   console.log(d.key);
+    //   var cat = d.key;
+    //
+    //   var tooltip = d3
+    //     .select("#statictooltip")
+    //     .append("div")
+    //     .attr("class", "tooltip");
+    //
+    //   var boxes = d3.selectAll("rect");
+    //   var finalboxes = boxes.filter(function (d) {
+    //     if (d != undefined) {
+    //       return d.element == cat;
+    //     }
+    //   });
+    //
+    //   console.log(finalboxes);
+    //   finalboxes
+    //     .on("mouseover", mouseover)
+    //     //.on("mousemove", mousemove)
+    //     .on("mouseleave", mouseleave);
+    //
+    //   var images = d3.selectAll("image");
+    //   images.on("mouseover", mouseover)
+    //   //.on("mousemove", mousemove)
+    //   .on("mouseleave", mouseleave);
+    //
+    //   // mouseover, mousemouve, mouseleave functions
+    //   function mouseover(d) {
+    //     tooltip.style("opacity", 1);
+    //     d3.select(this).style("stroke", "black").style("opacity", 1);
+    //     var formatNumber2 = d3.format(".2%");
+    //       var search = d.region.concat(d.subregion, d.element);
+    //       var val = d.value / dictionary[search];
+    //       tooltip
+    //         .html(d.key + "\n" + formatNumber2(val));
+    //         // .style("top", 1.5*margin.top + "px")
+    //         // .style("left", width - 210+ "px");
+    //         //.style("left", d3.mouse(this)[0] - margin.left + "px");
+    //         // .style("top", d3.mouse(this)[1] - height - margin.top + "px");
+    //   }
+    //
+    //
+    //   // function mousemove(d) {
+    //   //   var formatNumber2 = d3.format(".2%");
+    //   //   var search = d.region.concat(d.subregion, d.element);
+    //   //   var val = d.value / dictionary[search];
+    //   //   tooltip
+    //   //     .html(d.key + "\n" + formatNumber2(val))
+    //   //     .style("left", d3.mouse(this)[0] - margin.left + "px")
+    //   //     .style("top", d3.mouse(this)[1] - height - margin.top + "px");
+    //   // }
+    //
+    //   function mouseleave(d) {
+    //     tooltip.style("opacity", 0);
+    //     d3.select(this).style("stroke", "none").style("opacity", 1);
+    //   }
+    // }
+
+
+// add country to top bar on mouseover
+    if ((d.key == "Europe") | (d.key == "North America") | (d.key == "South America") | (d.key == "Africa") | (d.key == "Asia") | (d.key == "Oceania")) {
+      var cat = d.key;
 
       var boxes2 = d3.selectAll("rect");
 
-      boxes2.on("mouseover", mouseover).on("mouseleave", mouseleave);
+      boxes2.on("mouseover", mouseover)
+      .on("mouseleave", mouseleave);
 
-      function mouseover(d) {
-        console.log(d);
-        topbar
-          .append("text")
-          .text(d.parent.key)
-          .attr("id", "countryname")
-          .attr("x", 250)
-          .attr("y", 20 - margin.top);
-      }
-
-      function mouseleave(d) {
-        d3.select("#countryname").remove();
-      }
+    function mouseover(d) {
+      if (d != undefined) {
+        topbar.append("text")
+        .text( d.parent.key)
+        .attr("id", "countryname")
+        .attr("x", 450)
+        .attr("y", 20 - margin.top);
     }
+    }
+
+    function mouseleave(d) {
+      d3.select("#countryname").remove()
+    }
+
+    }
+
+
+
+
+
 
     // transition between grids
     function transition(d) {
@@ -489,7 +556,7 @@ function main(data) {
       old.selectAll(".ptext").call(text).style("fill-opacity", 0); // normal text from previous disappears
       old.selectAll(".ctext").call(text2).style("fill-opacity", 0); // text of children behind
       new_.selectAll(".ptext").call(text).style("fill-opacity", 1); //normal text
-      //  new_.selectAll(".ctext").call(text2).style("fill-opacity", 1); // text of children behind
+      // new_.selectAll(".ctext").call(text2).style("fill-opacity", 1); // text of children behind
       old.selectAll("rect").call(addRect); // draws rectangles
       new_.selectAll("rect").call(addRect); // draws rectangles
       old.selectAll("image").call(addImage); // draws images
@@ -500,6 +567,8 @@ function main(data) {
         svg.style("shape-rendering", "crispEdges");
         transitioning = false;
       });
+
+
     }
 
     return g;
@@ -543,8 +612,7 @@ function main(data) {
       .attr("y", function (d) {
         return y(d.y) + 3;
       });
-    text
-      .filter(function (d) {
+    text.filter(function (d) {
         return (d.key == "Food") | (d.key == "Feed");
       })
       .style("font-size", "25px");

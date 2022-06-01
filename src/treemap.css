@@ -43,7 +43,7 @@ rect.parent {
 }
 
 .topbar:hover rect {
-  fill: orange;
+  fill: #7678ED;
 }
 
 .children rect.parent,
@@ -77,16 +77,16 @@ image {
 }
 
  .tooltip {
-        background: #eee;
-        box-shadow: 0 0 5px #999999;
-        color: #333;
-        opacity: 0;
-        font-size: 16px;
-        /* left: 10px; */
-        padding: 10px;
-        position: relative;
-        text-align: center;
-        /* top: 95px; */
-        width: 220px;
-        z-index: 10;
+    background: #eee;
+    box-shadow: 0 0 5px #999999;
+    color: #333;
+    opacity: 0;
+    font-size: 16px;
+    /* left: 10px; */
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    /* top: 95px; */
+    width: 220px;
+    z-index: 10;
       }
