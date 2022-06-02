@@ -112,13 +112,19 @@ Below this, we will visualize the total global food supply over time using a lin
 
 For the overall website, we will need tools such as HTML and CSS. Interactive widgets can be implemented using JavaScript. As the main focus of the project is a dataset, D3.js will be an essential tool. For our core visualization, we are creating a map; therefore, the maps lecture will be an useful reference. The lectures addressing perception colors, interaction, and tabular data could also be of use. -->
 
-The document for milestone 2 can be found [here](doc/milestone_2.pdf). 
+The document for milestone 2 can be found [here](doc/milestone_2.pdf).
 
 A preview of the website can be found [here](https://htmlpreview.github.io/?https://github.com/com-480-data-visualization/datavis-project-2022-datagang/blob/master/src/index.html). The source code can be found under folder `./src`.
 
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
+
+The process book for milestone 2 can be found [here](doc/milestone_3.pdf).
+
+The website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-datagang/src/). There is no installation required.
+
+The demo video can be found [here](doc/demo.mp4).
 
 ## Late policy
 

@@ -157,143 +157,46 @@ function main(data) {
     g.append("rect").attr("class", "parent").call(addRect);
 
     // add images
-    if (d.key == "World") {
-      g.filter(function (d) {
-        return d.key == "Asia";
-      })
-        .append("image")
-        .attr("xlink:href", "data/asia.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Africa";
-      })
-        .append("image")
-        .attr("xlink:href", "data/africa.jpeg")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "North America";
-      })
-        .append("image")
-        .attr("xlink:href", "data/northamerica.jpeg")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "South America";
-      })
-        .append("image")
-        .attr("xlink:href", "data/southamericab.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Europe";
-      })
-        .append("image")
-        .attr("xlink:href", "data/europe.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Oceania";
-      })
-        .append("image")
-        .attr("xlink:href", "data/oceaniab.png")
-        .call(addImage);
-    }
+    const images_map = {
+      World: [
+        { key: "Africa", path: "africa.jpeg" },
+        { key: "Asia", path: "asia.png" },
+        { key: "North America", path: "northamerica.jpeg" },
+        { key: "South America", path: "southamericab.png" },
+        { key: "Europe", path: "europe.png" },
+        { key: "Oceania", path: "oceaniab.png" },
+      ],
+      Food: [
+        { key: "Milk", path: "milkb.png" },
+        { key: "Cereals", path: "cerealsborder.png" },
+        { key: "Rice", path: "rice.png" },
+        { key: "Vegetables", path: "vegetables.png" },
+        { key: "Fruits", path: "fruitb.png" },
+        { key: "Meat", path: "meatb.png" },
+        { key: "Fish, Seafood", path: "seafoodb.png" },
+        { key: "Others", path: "others2.png" },
+        { key: "Maize", path: "maize.png" },
+        { key: "Starchy Roots", path: "starchyroots.png" },
+        { key: "Alcoholic Beverages", path: "alcohol.png" },
+        { key: "Beer", path: "beer.png" },
+        { key: "Wheat", path: "wheat.png" },
+        { key: "Potatoes", path: "potatoes.png" },
+        { key: "Sugar & Sweeteners", path: "sugar.png" },
+        { key: "Cassava", path: "cassava.png" },
+      ],
+    };
 
-    // add food images
-    if (d.key == "Food" || d.key == "Feed") {
-      g.filter(function (d) {
-        return d.key == "Milk";
-      })
-        .append("image")
-        .attr("xlink:href", "data/milkb.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Cereals";
-      })
-        .append("image")
-        .attr("xlink:href", "data/cerealsborder.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Rice";
-      })
-        .append("image")
-        .attr("xlink:href", "data/rice.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Vegetables";
-      })
-        .append("image")
-        .attr("xlink:href", "data/vegetables.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Fruits";
-      })
-        .append("image")
-        .attr("xlink:href", "data/fruitb.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Meat";
-      })
-        .append("image")
-        .attr("xlink:href", "data/meatb.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Fish, Seafood";
-      })
-        .append("image")
-        .attr("xlink:href", "data/seafoodb.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Others";
-      })
-        .append("image")
-        .attr("xlink:href", "data/others2.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Maize";
-      })
-        .append("image")
-        .attr("xlink:href", "data/maize.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Starchy Roots";
-      })
-        .append("image")
-        .attr("xlink:href", "data/starchyroots.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Alcoholic Beverages";
-      })
-        .append("image")
-        .attr("xlink:href", "data/alcohol.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Beer";
-      })
-        .append("image")
-        .attr("xlink:href", "data/beer.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Wheat";
-      })
-        .append("image")
-        .attr("xlink:href", "data/wheat.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Potatoes";
-      })
-        .append("image")
-        .attr("xlink:href", "data/potatoes.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Sugar & Sweeteners";
-      })
-        .append("image")
-        .attr("xlink:href", "data/sugar.png")
-        .call(addImage);
-      g.filter(function (d) {
-        return d.key == "Cassava";
-      })
-        .append("image")
-        .attr("xlink:href", "data/cassava.png")
-        .call(addImage);
+    if (d.key == "Food" || d.key == "Feed") d.key = "Food";
+
+    if (images_map[d.key]) {
+      images_map[d.key].forEach(({ key, path }) => {
+        g.filter(function (d) {
+          return d.key == key;
+        })
+          .append("image")
+          .attr("xlink:href", "data/" + path)
+          .call(addImage);
+      });
     }
 
     // add food and feed images
