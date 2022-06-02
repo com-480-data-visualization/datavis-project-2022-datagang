@@ -312,7 +312,6 @@ function main(data) {
       var images2 = d3.selectAll("image");
       images2
         .on("mouseover", mouseover2)
-        //.on("mousemove", mousemove)
         .on("mouseleave", mouseleave2);
 
       function mouseover2(d) {
@@ -334,47 +333,47 @@ function main(data) {
       }
     }
 
-    if ((d.key == "Food") | (d.key == "Feed")) {
-      var cat = d.key;
+//     if ((d.key == "Food") | (d.key == "Feed")) {
+//       var cat = d.key;
 
-      var tooltip = d3
-        .select("#statictooltip")
-        .append("div")
-        .attr("class", "tooltip");
+//       var tooltip = d3
+//         .select("#statictooltip")
+//         .append("div")
+//         .attr("class", "tooltip");
 
-      var boxes = d3.selectAll("rect");
-      var finalboxes = boxes.filter(function (d) {
-        if (d != undefined) {
-          return d.element == cat;
-        }
-      });
+//       var boxes = d3.selectAll("rect");
+//       var finalboxes = boxes.filter(function (d) {
+//         if (d != undefined) {
+//           return d.element == cat;
+//         }
+//       });
 
-      finalboxes
-        .on("mouseover", mouseover)
-        .on("mouseleave", mouseleave);
+//       finalboxes
+//         .on("mouseover", mouseover)
+//         .on("mouseleave", mouseleave);
 
-      var images = d3.selectAll("image");
-      images
-        .on("mouseover", mouseover)
-        .on("mouseleave", mouseleave);
+//       var images = d3.selectAll("image");
+//       images
+//         .on("mouseover", mouseover)
+//         .on("mouseleave", mouseleave);
 
-      // mouseover, mousemouve, mouseleave functions
-      function mouseover(d) {
-        tooltip.style("opacity", 1);
-        d3.select(this).style("stroke", "black").style("opacity", 1);
-        var formatNumber2 = d3.format(".2%");
-        var search = d.region.concat(d.subregion, d.element);
-        var val = d.value / dictionary[search];
-        tooltip.html(d.key + "\n" + formatNumber2(val));
-      }
+//       // mouseover, mousemouve, mouseleave functions
+//       function mouseover(d) {
+//         tooltip.style("opacity", 1);
+//         d3.select(this).style("stroke", "black").style("opacity", 1);
+//         var formatNumber2 = d3.format(".2%");
+//         var search = d.region.concat(d.subregion, d.element);
+//         var val = d.value / dictionary[search];
+//         tooltip.html(d.key + "\n" + formatNumber2(val));
+//       }
 
 
 
-      function mouseleave(d) {
-        tooltip.style("opacity", 0);
-        d3.select(this).style("stroke", "none").style("opacity", 1);
-      }
-    }
+//       function mouseleave(d) {
+//         tooltip.style("opacity", 0);
+//         d3.select(this).style("stroke", "none").style("opacity", 1);
+//       }
+//     }
 
     // add country to top bar on mouseover
     if (
