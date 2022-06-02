@@ -2,10 +2,14 @@
 <html>
   <head>
     <title>Data Gang Project 2022</title>
-    <script src="https://d3js.org/d3.v3.min.js">
-      d3v3 = d3;
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+      // d3v3 = d3;
     </script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+      d3v3 = d3;
+    </script>
     <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
     <meta charset="utf-8" />
     <!-- <script src="lib/d3.min.js"></script> -->
@@ -65,7 +69,7 @@
       style="display: flex; gap: 8em; margin-top: 2em"
       class="project-description"
     >
-      <div class="header-section">
+      <div class="header-section" style="flex: 5">
         <h3 style="margin-top: 0px">The data</h3>
         <div>
           Our Food Balance Sheet dataset contains four important features:
@@ -93,7 +97,12 @@
         </div>
       </div>
 
-      <div class="header-section">
+      <div class="header-counters">
+        <div class="counter" id="counter_pop_undernourished"></div>
+        <div class="counter mt-2" id="counter_us_feed"></div>
+      </div>
+
+      <div class="header-section" style="flex: 5">
         <h3 style="margin-top: 0px">The problem</h3>
         <div>
           Food is a major concern wordlwide and it is problem that is expected
@@ -164,7 +173,9 @@
           </fieldset>
 
           <div className="right-col-section">
-            <legend class="section-title mt-4" style="margin-bottom: 0">Food vs Feed</legend>
+            <legend class="section-title mt-4" style="margin-bottom: 0">
+              Food vs Feed
+            </legend>
             <div class="piesection">
               <div id="piechart"></div>
               <div id="pielegend"></div>
@@ -172,9 +183,9 @@
           </div>
 
           <div className="right-col-section">
-          <legend class="mt-4">Population fed by feed supplies</legend>
-          <!-- <div class="supply-stickmen"> -->
-          <span>North America</span>
+            <legend class="mt-4">Population fed by feed supplies</legend>
+            <!-- <div class="supply-stickmen"> -->
+            <span>North America</span>
             <div class="supply-stickman" id="northam"></div>
             <span>South America</span>
             <div class="supply-stickman" id="southam"></div>
@@ -186,8 +197,8 @@
             <div class="supply-stickman" id="asia"></div>
             <span>Oceania</span>
             <div class="supply-stickman" id="oce"></div>
-          <!-- </div> -->
-        </div>
+            <!-- </div> -->
+          </div>
 
           <!-- <div class="right-col-section total-supply">
             <h2 class="section-title">Total food supply in the world</h2>
@@ -221,14 +232,16 @@
           <h3 style="margin-top: 0px">What does it show?</h3>
           <div>
             The most striking thing to do is to switch between the "Food" and
-            "Feed" modes and see that a lot of countries nearly use half as much aliments to feed livestock than humans.
-            In the USA alone, 1000 tons of food are used for that purpose only every year!<br />
+            "Feed" modes and see that a lot of countries nearly use half as much
+            aliments to feed livestock than humans. In the USA alone, 1000 tons
+            of food are used for that purpose only every year!<br />
             It is interesting to see that this trend mostly applies to richer
             countries, the poorer ones tend to have less proportion gap. Our
             charts on the right also show quite evidently that we have way more
             food than needed in the world, the main problem is how it is
-            repartited. Around a quarter of the production goes towards feeding livestock, and with this supply alone
-            we could feed most of the population.
+            repartited. Around a quarter of the production goes towards feeding
+            livestock, and with this supply alone we could feed most of the
+            population.
           </div>
         </div>
       </div>
@@ -247,47 +260,47 @@
     </div>
 
     <div class="second-screen">
-
-
-<div style="margin: 0 auto">
+      <div style="margin: 0 auto">
         <div id="treemap"></div>
         <div id="tooltip"></div>
         <div id="statictooltip"></div>
-    </div>
+      </div>
 
-
-    <div
-      style="
-        padding-left: 10%;
-        padding-right: 10%;
-        margin-top: 6em;
-        display: flex;
-        gap: 2em;
-      "
-    >
-      <div class="header-section">
-        <h3 style="margin-top: 0px">How to use?</h3>
-        <div >
-          Using this interactive treemap, you can visualize data for the entire
-          world. Select a continent to bring you to the country screen. For countries in the grids
-          that are too small to fit the name, hover over the box and the country name will appear in the top bar.
-          Choose food or feed to see the most common aliments allocated for people or for livestock.
-          For any boxes without information in the box, hovering over it will display the information in the
-            bar above.
+      <div
+        style="
+          padding-left: 10%;
+          padding-right: 10%;
+          margin-top: 6em;
+          display: flex;
+          gap: 2em;
+        "
+      >
+        <div class="header-section">
+          <h3 style="margin-top: 0px">How to use?</h3>
+          <div>
+            Using this interactive treemap, you can visualize data for the
+            entire world. Select a continent to bring you to the country screen.
+            For countries in the grids that are too small to fit the name, hover
+            over the box and the country name will appear in the top bar. Choose
+            food or feed to see the most common aliments allocated for people or
+            for livestock. For any boxes without information in the box,
+            hovering over it will display the information in the bar above.
+          </div>
+        </div>
+        <div class="header-section">
+          <h3 style="margin-top: 0px">What does it show?</h3>
+          <div>
+            This chart shows how much each continent and each country
+            contributes to the global food consumption. By clicking on a
+            country, you can see what proportion of the country's food supply is
+            diverted to food and to feed. You can also see the most common types
+            of food that are consumed by humans and by livestock. It is
+            interesting to distinguish eating habits by continent and by
+            country. It is evident that these change heavily depending on the
+            growth of the country.
+          </div>
         </div>
       </div>
-      <div class="header-section" >
-        <h3 style="margin-top: 0px">What does it show?</h3>
-        <div>
-          This chart shows how much each continent and each country contributes to the global food consumption.
-          By clicking on a country, you can see what proportion of the country's food supply is diverted to food and to feed.
-          You can also see the most common types of food that are consumed by humans and by livestock. It is interesting to distinguish
-          eating habits by continent and by country. It is evident that these change heavily depending on the growth
-          of the country.
-        </div>
-      </div>
-    </div>
-
     </div>
 
     <br />
@@ -322,7 +335,7 @@
               Proportion of products used for food or feed for the 10 most
               common types of aliments (in %)
             </p>
-            <div id="my_dataviz"></div>
+            <div id="types_of_food_chart"></div>
 
             <div id="types_of_food_legend">
               <div class="legend_row">
@@ -356,5 +369,6 @@
     <script src="index.js"></script>
     <script src="treemap.js"></script>
     <script src="country_focus.js"></script>
+    <script src="animated_counter.js"></script>
   </body>
 </html>

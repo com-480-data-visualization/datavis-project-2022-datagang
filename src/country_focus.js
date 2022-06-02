@@ -1,10 +1,14 @@
-function typesOfFoodBarPlot(agg_data, year) {
-  // set the dimensions and margins of the graph
-  var margin = { top: 10, right: 30, bottom: 120, left: 50 },
-    width = 620 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+/**
+ * Handles the content of the pop-up displayed while clicking on a country for
+ * a given year.
+ */
 
-  $("#my_dataviz").empty();
+function typesOfFoodBarPlot(agg_data, year) {
+  const margin = { top: 10, right: 30, bottom: 120, left: 50 };
+  const width = 620 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+
+  $("#types_of_food_chart").empty();
 
   var data = agg_data.map((row) => ({
     group: row.group.split("-")[0].split("and products")[0],
@@ -12,21 +16,20 @@ function typesOfFoodBarPlot(agg_data, year) {
     food: row.food[year] || 0,
   }));
 
-  // append the svg object to the body of the page
+  // Create svg object
   var svg = d3
-    .select("#my_dataviz")
+    .select("#types_of_food_chart")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // List of subgroups = header of the csv files = soil condition here
+  // Headers
   var groups = data.map((row) => row.group);
-
   var subgroups = ["food", "feed"];
 
-  // Add X axis
+  // x axis
   var x = d3.scaleBand().domain(groups).range([0, width]).padding([0.4]);
   svg
     .append("g")
@@ -40,30 +43,24 @@ function typesOfFoodBarPlot(agg_data, year) {
     return Math.max(curr.feed, curr.food, acc);
   }, 0);
 
-  // console.log("Hejjj", max);
-
-  // Add Y axis
+  // Add y axis
   var y = d3.scaleLinear().domain([0, max]).range([height, 0]);
   svg.append("g").attr("class", "axisWhite").call(d3.axisLeft(y));
 
-  // Another scale for subgroup position?
+  // scale for subgroups
   var xSubgroup = d3
     .scaleBand()
     .domain(subgroups)
     .range([0, x.bandwidth()])
     .padding([0.05]);
 
-  // color palette = one color per subgroup
-  var color = d3
-    .scaleOrdinal()
-    .domain(subgroups)
-    .range(["red", "orange", "#4daf4a"]);
+  // color palette
+  var color = d3.scaleOrdinal().domain(subgroups).range(["red", "orange"]);
 
-  // Show the bars
+  // draw bars
   svg
     .append("g")
     .selectAll("g")
-    // Enter in data = loop group per group
     .data(data)
     .enter()
     .append("g")
@@ -97,7 +94,6 @@ function typesOfFoodBarPlot(agg_data, year) {
       return height - y(d.value);
     })
     .delay(function (d, i) {
-      console.log(i);
       return i * 10;
     });
 }

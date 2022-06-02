@@ -1,3 +1,8 @@
+/**
+ * Handle everything that is on the right of the map.
+ */
+
+// Pie chart displaying the proportion of food and feed in the world.
 function draw_pie_chart() {
   // Pie chart
   var width = 150;
@@ -59,10 +64,10 @@ function draw_pie_chart() {
       })[0].Prop;
 
       d3.select("#pielegend").html(
-        "<div style='color: red;'>Food: " +
+        "<div style='color: orange;'>Food: " +
           parseFloat(foodprop * 100).toFixed(2) +
           "%</div>" +
-          "<div style='color: orange;'>Feed: " +
+          "<div style='color: red;'>Feed: " +
           parseFloat(feedprop * 100).toFixed(2) +
           "%</div>"
       );

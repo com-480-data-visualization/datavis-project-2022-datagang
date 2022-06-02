@@ -342,3 +342,32 @@ ol {
   margin-top: 3px;
   margin-bottom: 20px;
 }
+
+.ac_val {
+  font-size: 3.5rem;
+  font-weight: bolder;
+}
+
+.ac_label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: -20px;
+  margin-bottom: 5px;
+}
+
+.ac_title {
+  opacity: 0.75;
+  font-size: 0.8rem;
+}
+
+.counter {
+  text-align: center;
+}
+
+.header-counters {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3em;;
+}
