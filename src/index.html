@@ -221,13 +221,13 @@
           <h3 style="margin-top: 0px">What does it show?</h3>
           <div>
             The most striking thing to do is to switch between the "Food" and
-            "Feed" modes and see that a lot of countries nearly use half as much aliments to feed livestock than humans. 
+            "Feed" modes and see that a lot of countries nearly use half as much aliments to feed livestock than humans.
             In the USA alone, 1000 tons of food are used for that purpose only every year!<br />
             It is interesting to see that this trend mostly applies to richer
             countries, the poorer ones tend to have less proportion gap. Our
             charts on the right also show quite evidently that we have way more
             food than needed in the world, the main problem is how it is
-            repartited. Around a quarter of the production goes towards feeding livestock, and with this supply alone 
+            repartited. Around a quarter of the production goes towards feeding livestock, and with this supply alone
             we could feed most of the population.
           </div>
         </div>
@@ -246,35 +246,47 @@
       </h2>
     </div>
 
-    <!-- <div class="second-screen">
-      <div class="scs-first">
-        <div class="scsf-left">
-          <h2>Food quantities per type of aliment</h2>
-          <img src="assets/treemap.png" />
-        </div>
-        <div class="scss-right">
-          <h2>Feed quantities per type of aliment</h2>
-          <img src="assets/treemap.png" />
-        </div>
-      </div> -->
-      <!-- <div class="scs-second">
-        <div class="scss-left"></div>
-      </div> -->
+    <div class="second-screen">
 
-      <div style="margin: 0 auto">
+
+<div style="margin: 0 auto">
         <div id="treemap"></div>
         <div id="tooltip"></div>
-      </div>
+        <div id="statictooltip"></div>
+    </div>
 
-      <div class="header-section" style="margin-top: 6em; margin-left: 25%; margin-right: 25%;">
-        <h3 style="margin-top: 0px">What does it show?</h3>
-        <div>
-          This chart shows how much each continent and each countries weights in the global food consumption.
-          By clicking on a country, you can see all the types of food that are consumed. It is useful to distinguish
-          eating habits by continent and by country. It is evident that these change heavily depending on the growth 
-          of the country. 
+
+    <div
+      style="
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 6em;
+        display: flex;
+        gap: 2em;
+      "
+    >
+      <div class="header-section">
+        <h3 style="margin-top: 0px">How to use?</h3>
+        <div >
+          Using this interactive treemap, you can visualize data for the entire
+          world. Select a continent to bring you to the country screen. For countries in the grids
+          that are too small to fit the name, hover over the box and the country name will appear in the top bar.
+          Choose food or feed to see the most common aliments allocated for people or for livestock.
+          For any boxes without information in the box, hovering over it will display the information in the
+            bar above.
         </div>
       </div>
+      <div class="header-section" >
+        <h3 style="margin-top: 0px">What does it show?</h3>
+        <div>
+          This chart shows how much each continent and each country contributes to the global food consumption.
+          By clicking on a country, you can see what proportion of the country's food supply is diverted to food and to feed.
+          You can also see the most common types of food that are consumed by humans and by livestock. It is interesting to distinguish
+          eating habits by continent and by country. It is evident that these change heavily depending on the growth
+          of the country.
+        </div>
+      </div>
+    </div>
 
     </div>
 
