@@ -27,7 +27,6 @@ function main(data) {
 
   var color = d3.scale.category20();
 
-  // var colors = ["#003f5c", "#2f4b7c", "#665191", "#a05195", "#d45087", "#f95d6a", "#ff7c43", "#ffa600"];
   var colors = [
     "#4c6085",
     "#4380b9",
@@ -37,7 +36,6 @@ function main(data) {
     "#25dbb8",
     "#13c4a3",
   ];
-  //var colors = ["#504746", "#846f66", "#bca294", "#bfada3", "#ddb2b2", "#fbb7c0", "#ea93a4", "#d96e88", "#c8496c", "#b6244f"];
 
   var x = d3.scale.linear().domain([0, width]).range([0, width]);
 
@@ -184,9 +182,25 @@ function main(data) {
         { key: "Sugar & Sweeteners", path: "sugar.png" },
         { key: "Cassava", path: "cassava.png" },
       ],
+      Feed: [
+        { key: "Milk", path: "milkb.png" },
+        { key: "Cereals", path: "cerealsborder.png" },
+        { key: "Rice", path: "rice.png" },
+        { key: "Vegetables", path: "vegetables.png" },
+        { key: "Fruits", path: "fruitb.png" },
+        { key: "Meat", path: "meatb.png" },
+        { key: "Fish, Seafood", path: "seafoodb.png" },
+        { key: "Others", path: "others2.png" },
+        { key: "Maize", path: "maize.png" },
+        { key: "Starchy Roots", path: "starchyroots.png" },
+        { key: "Alcoholic Beverages", path: "alcohol.png" },
+        { key: "Beer", path: "beer.png" },
+        { key: "Wheat", path: "wheat.png" },
+        { key: "Potatoes", path: "potatoes.png" },
+        { key: "Sugar & Sweeteners", path: "sugar.png" },
+        { key: "Cassava", path: "cassava.png" },
+      ],
     };
-
-    if (d.key == "Food" || d.key == "Feed") d.key = "Food";
 
     if (images_map[d.key]) {
       images_map[d.key].forEach(({ key, path }) => {
@@ -254,7 +268,6 @@ function main(data) {
     g.selectAll("rect").style("fill", function (d) {
       var rand = Math.floor(Math.random() * 7);
       return colors[rand];
-      //return color(d.key);
     }); // adds color to rectangles
 
     g.selectAll("rect")
@@ -298,10 +311,11 @@ function main(data) {
       })
       .style("fill", "#38c9dd");
 
-    // add tooltip for food
+    // add top bar text for food on mouseover
 
     if ((d.key == "Food") | (d.key == "Feed")) {
       var cat2 = d.key;
+      console.log(cat2);
 
       var boxes2 = d3.selectAll("rect");
       var finalboxes2 = boxes2.filter(function (d) {
@@ -315,7 +329,6 @@ function main(data) {
       var images2 = d3.selectAll("image");
       images2
         .on("mouseover", mouseover2)
-        //.on("mousemove", mousemove)
         .on("mouseleave", mouseleave2);
 
       function mouseover2(d) {
@@ -337,61 +350,7 @@ function main(data) {
       }
     }
 
-    if ((d.key == "Food") | (d.key == "Feed")) {
-      var cat = d.key;
 
-      var tooltip = d3
-        .select("#statictooltip")
-        .append("div")
-        .attr("class", "tooltip");
-
-      var boxes = d3.selectAll("rect");
-      var finalboxes = boxes.filter(function (d) {
-        if (d != undefined) {
-          return d.element == cat;
-        }
-      });
-
-      finalboxes
-        .on("mouseover", mouseover)
-        //.on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
-
-      var images = d3.selectAll("image");
-      images
-        .on("mouseover", mouseover)
-        //.on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
-
-      // mouseover, mousemouve, mouseleave functions
-      function mouseover(d) {
-        tooltip.style("opacity", 1);
-        d3.select(this).style("stroke", "black").style("opacity", 1);
-        var formatNumber2 = d3.format(".2%");
-        var search = d.region.concat(d.subregion, d.element);
-        var val = d.value / dictionary[search];
-        tooltip.html(d.key + "\n" + formatNumber2(val));
-        // .style("top", 1.5*margin.top + "px")
-        // .style("left", width - 210+ "px");
-        //.style("left", d3.mouse(this)[0] - margin.left + "px");
-        // .style("top", d3.mouse(this)[1] - height - margin.top + "px");
-      }
-
-      // function mousemove(d) {
-      //   var formatNumber2 = d3.format(".2%");
-      //   var search = d.region.concat(d.subregion, d.element);
-      //   var val = d.value / dictionary[search];
-      //   tooltip
-      //     .html(d.key + "\n" + formatNumber2(val))
-      //     .style("left", d3.mouse(this)[0] - margin.left + "px")
-      //     .style("top", d3.mouse(this)[1] - height - margin.top + "px");
-      // }
-
-      function mouseleave(d) {
-        tooltip.style("opacity", 0);
-        d3.select(this).style("stroke", "none").style("opacity", 1);
-      }
-    }
 
     // add country to top bar on mouseover
     if (
@@ -448,7 +407,6 @@ function main(data) {
       old.selectAll(".ptext").call(text).style("fill-opacity", 0); // normal text from previous disappears
       old.selectAll(".ctext").call(text2).style("fill-opacity", 0); // text of children behind
       new_.selectAll(".ptext").call(text).style("fill-opacity", 1); //normal text
-      // new_.selectAll(".ctext").call(text2).style("fill-opacity", 1); // text of children behind
       old.selectAll("rect").call(addRect); // draws rectangles
       new_.selectAll("rect").call(addRect); // draws rectangles
       old.selectAll("image").call(addImage); // draws images
