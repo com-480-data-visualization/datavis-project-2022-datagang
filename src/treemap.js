@@ -14,7 +14,7 @@ var defaults = {
 };
 
 function main(data) {
-  var dictionary = data.dict; // dictionary of food/feed amounts for each bo
+  var dictionary = data.dict; // dictionary of food/feed amounts for each box
 
   var formatNumber = d3.format(defaults.format),
     rname = defaults.rootname,
@@ -315,7 +315,6 @@ function main(data) {
 
     if ((d.key == "Food") | (d.key == "Feed")) {
       var cat2 = d.key;
-      console.log(cat2);
 
       var boxes2 = d3.selectAll("rect");
       var finalboxes2 = boxes2.filter(function (d) {
