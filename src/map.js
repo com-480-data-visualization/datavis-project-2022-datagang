@@ -89,9 +89,12 @@ function getColor(d, feature) {
 
 // Style for each country
 const style = (feature) => {
-  const property = feature.properties[map_state.mode.data_key];
+  let property = feature.properties[map_state.mode.data_key];
+  let val = property ? property[map_state.year] : 0;
+  if (val > 100000) val /= 10000;
+
   return {
-    fillColor: getColor(property ? property[map_state.year] : 0, "food_supply"),
+    fillColor: getColor(val, "food_supply"),
     weight: 1,
     opacity: 1,
     color: "white",
@@ -190,6 +193,8 @@ info.update = function (props) {
     props && props[map_state.mode.data_key]
       ? Math.round(props[map_state.mode.data_key][map_state.year])
       : 0;
+
+  if (value > 100000) value = parseInt(value / 100000);
 
   this._div.innerHTML = `
     <h4>${map_state.mode.label}</h4>
