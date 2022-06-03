@@ -120,7 +120,7 @@ A preview of the website can be found [here](https://htmlpreview.github.io/?http
 
 **80% of the final grade**
 
-The process book for milestone 2 can be found [here](doc/milestone_3.pdf).
+The process book for milestone 3 can be found [here](doc/milestone_3.pdf).
 
 The website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-datagang/src/). There is no installation required.
 
